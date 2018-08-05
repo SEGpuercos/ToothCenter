@@ -1,0 +1,1307 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
+      <SubComponents>
+        <Menu class="javax.swing.JMenu" name="jMenu1">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Icons/back.png"/>
+            </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Regresar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jMenu1MouseClicked"/>
+          </Events>
+        </Menu>
+      </SubComponents>
+    </Menu>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="title" type="java.lang.String" value="ToothCenter - Historial Clinico"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <Events>
+    <EventHandler event="windowActivated" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowActivated"/>
+  </Events>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jPanel6" alignment="0" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jPanel6" min="-2" max="-2" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel6">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="jPanel7" alignment="0" max="32767" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel22" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel21" alignment="0" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="jLabel20" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel19" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel18" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel23" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="txtFecha" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
+                              <Component id="txtNombre" alignment="0" min="-2" pref="290" max="-2" attributes="0"/>
+                              <Component id="txtEdad" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
+                              <Component id="txtSexo" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
+                              <Component id="txtTutor" alignment="0" min="-2" pref="290" max="-2" attributes="0"/>
+                              <Component id="txtDomicilio" alignment="0" min="-2" pref="290" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="59" pref="59" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane3" min="-2" pref="330" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel29" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="24" pref="24" max="-2" attributes="0"/>
+                                  <Component id="txtTSangre" min="-2" pref="330" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel28" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="143" pref="143" max="-2" attributes="0"/>
+                                  <Component id="txtCirugias" min="-2" pref="330" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="86" pref="86" max="-2" attributes="0"/>
+                                  <Component id="txtTA" min="-2" pref="330" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="24" pref="24" max="-2" attributes="0"/>
+                                  <Component id="txtAntec" min="-2" pref="330" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="txtOdontologo" min="-2" pref="330" max="-2" attributes="0"/>
+                                      <Component id="txtfechanac" min="-2" pref="150" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="56" pref="56" max="-2" attributes="0"/>
+                                          <Component id="rbtnPSi1" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                                          <Component id="rbtnPNo1" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
+                                          <Component id="rbtnPSi2" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                                          <Component id="rbtnPNo2" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="36" pref="36" max="-2" attributes="0"/>
+                                          <Component id="rbtnPSi3" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                                          <Component id="rbtnPNo3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="81" pref="81" max="-2" attributes="0"/>
+                                          <Component id="rbtnPSi4" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                                          <Component id="rbtnPNo4" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="109" pref="109" max="-2" attributes="0"/>
+                                          <Component id="rbtnPSi5" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                                          <Component id="rbtnPNo5" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="89" pref="89" max="-2" attributes="0"/>
+                                          <Component id="rbtnPSi6" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                                          <Component id="rbtnPNo6" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
+                                          <Component id="rbtnPSi7" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                                          <Component id="rbtnPNo7" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace pref="108" max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel32" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="119" pref="119" max="-2" attributes="0"/>
+                                          <Component id="rbtnPSi12" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                                          <Component id="rbtnPNo12" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="100" pref="100" max="-2" attributes="0"/>
+                                          <Component id="rbtnPSi13" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                                          <Component id="rbtnPNo13" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel37" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="52" pref="52" max="-2" attributes="0"/>
+                                          <Component id="rbtnPSi14" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                                          <Component id="rbtnPNo14" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel34" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="106" pref="106" max="-2" attributes="0"/>
+                                          <Component id="rbtnPSi15" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                                          <Component id="rbtnPNo15" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel33" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="54" pref="54" max="-2" attributes="0"/>
+                                          <Component id="rbtnPSi11" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                                          <Component id="rbtnPNo11" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="21" pref="21" max="-2" attributes="0"/>
+                                          <Component id="rbtnPSi16" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                                          <Component id="rbtnPNo16" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="345" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                                  <Component id="rbtnPSi" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                                  <Component id="rbtnPNo" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                  <Component id="rbtnAnSi" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                                  <Component id="rbtnAnNo" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="37" pref="37" max="-2" attributes="0"/>
+                                  <Component id="rbtnYSi" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                                  <Component id="rbtnYNo" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                                  <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                                  <Component id="rbtnASi" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                                  <Component id="rbtnANo" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="39" pref="39" max="-2" attributes="0"/>
+                                  <Component id="txtotro" min="-2" pref="200" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                                  <Component id="jLabel31" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="75" pref="75" max="-2" attributes="0"/>
+                                  <Component id="rbtnPSi8" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                                  <Component id="rbtnPNo8" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                                  <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="13" pref="13" max="-2" attributes="0"/>
+                                  <Component id="rbtnPSi9" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                                  <Component id="rbtnPNo9" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel38" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="rbtnPSi17" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                                          <Component id="rbtnPNo17" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="rbtnPSi10" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                                          <Component id="rbtnPNo10" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="310" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+              <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="jPanel7" min="-2" pref="36" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtFecha" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel18" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtNombre" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtEdad" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtSexo" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel21" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtTutor" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel22" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtDomicilio" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel23" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="rbtnPSi" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnPNo" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
+                                  <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="rbtnAnSi" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnAnNo" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnYSi" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnYNo" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnASi" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnANo" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
+                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="txtotro" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="txtfechanac" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel25" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtOdontologo" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel26" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtAntec" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
+                                  <Component id="txtTA" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <Component id="jLabel27" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="txtCirugias" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel28" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel29" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="txtTSangre" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                  <Component id="jLabel30" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jScrollPane3" alignment="0" min="-2" pref="120" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                          <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPSi1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPNo1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel33" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPSi11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPNo11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPSi2" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                              <Component id="rbtnPNo2" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                              <Component id="jLabel32" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPSi12" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPNo12" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPSi3" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                              <Component id="rbtnPNo3" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                              <Component id="jLabel35" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPSi13" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPNo13" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPSi4" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                              <Component id="rbtnPNo4" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                              <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPSi14" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPNo14" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel16" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPSi5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPNo5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel34" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPSi15" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPNo15" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel13" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPSi6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPNo6" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="jLabel36" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPSi16" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPNo16" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel15" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPSi7" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPNo7" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel31" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPSi8" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPNo8" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                                  <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="rbtnPSi9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPNo9" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPSi10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPNo10" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="rbtnPSi17" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="rbtnPNo17" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Component id="jLabel38" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel24" min="-2" pref="17" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="jPanel7">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="66" red="0" type="rgb"/>
+            </Property>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="514" max="-2" attributes="0"/>
+                      <Component id="jLabel17" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel17">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Calibri" size="18" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Historia clinica odontologica"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="jLabel18">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Fecha"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtFecha">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtNombre">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel19">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Nombre"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel20">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Edad"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel21">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Sexo"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtEdad">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtSexo">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel22">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Padre o tutor"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtTutor">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtTutorActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtDomicilio">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtDomicilioActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel23">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Domicilio"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel24">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Fecha de nacimiento"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtOdontologo">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel25">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Odontologo tratante"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel26">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Antecedentes familiares"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtAntec">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel27">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Tension arterial"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtTA">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel28">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Cirug&#xed;as"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtCirugias">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtCirugiasActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtTSangre">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel29">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Transfuciones de sangre"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel30">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Motivo de consulta"/>
+          </Properties>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane3">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="txtConsulta">
+              <Properties>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Calibri" size="14" style="0"/>
+                </Property>
+                <Property name="rows" type="int" value="5"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JSeparator" name="jSeparator1">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Aspirina"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPSi8">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel6">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Otro"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPNo8">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPSi">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPNo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnAnSi">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnAnNo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPSi9">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPNo9">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPSi10">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPNo10">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnYSi">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPSi11">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnYNo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPNo11">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnASi">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPNo12">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnANo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPSi12">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtotro">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPNo13">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel7">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="20" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Padecimientos"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPSi13">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel8">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Alta o baja presi&#xf3;n"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel9">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Sangre excesiva al cortarse"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel10">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Problemas sanguineos"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel11">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="V.I.H. Positivo"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel12">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Consumo de medicamentos retroviales"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel13">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Embarazada"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel14">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Consumo de pastillas anticonceptivas"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel15">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Enfermedades venereas"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel16">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Hepatitis"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel31">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Ulcera gastrica"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel32">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Asma"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel33">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Fiebre reumatica"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel34">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Tiroides"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel35">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Diabetes"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel36">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Ruidos en la mandibula"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel37">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Aftas recurrentes"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPSi1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPNo1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPSi2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPNo2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPSi3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPNo3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPNo14">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPSi14">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPNo15">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPSi15">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPNo16">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPSi16">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPSi4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPNo4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPSi5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPNo5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="20" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Alergias"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPSi6">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Penicilina"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPNo6">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Anestecia"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPSi7">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel4">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Yodo"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPNo7">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPNo17">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPSi17">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel38">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Limitaciones para abrir la boca"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtfechanac">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="18" style="0"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder/>
+              </Border>
+            </Property>
+            <Property name="enabled" type="boolean" value="false"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

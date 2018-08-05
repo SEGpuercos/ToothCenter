@@ -1,0 +1,1163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JDialogFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="btngPenicilina">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="btngAnestecia">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="btngYodo">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="btngAspirina">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="btngPresion">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="btngPSanguineos">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="btngVIH">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="btngHepatitis">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="btngEmbarazo">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="btngEVenereas">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="btngUlceraG">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="btngCPAntic">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="btngCMRetroviales">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="btngLimitaciones">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="btngFiebre">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="btngAsma">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="btngDiabetes">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="btngAftas">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="btngTiroides">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="btngRuidos">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="btngSangreExcesiva">
+    </Component>
+    <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
+      <SubComponents>
+        <Menu class="javax.swing.JMenu" name="jmGuardar">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/Icons/if_save_32_51415.png"/>
+            </Property>
+            <Property name="toolTipText" type="java.lang.String" value="Guardar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jmGuardarMouseClicked"/>
+          </Events>
+        </Menu>
+      </SubComponents>
+    </Menu>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="2"/>
+    <Property name="undecorated" type="boolean" value="true"/>
+    <Property name="resizable" type="boolean" value="false"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="menuBar" type="java.lang.String" value="jMenuBar1"/>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="true"/>
+  </SyntheticProperties>
+  <Events>
+    <EventHandler event="windowActivated" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowActivated"/>
+    <EventHandler event="windowClosed" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowClosed"/>
+    <EventHandler event="windowClosing" listener="java.awt.event.WindowListener" parameters="java.awt.event.WindowEvent" handler="formWindowClosing"/>
+  </Events>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jPanel1" max="32767" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+          <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
+            <EtchetBorder>
+              <Color PropertyName="highlight" blue="cc" green="66" red="0" type="rgb"/>
+            </EtchetBorder>
+          </Border>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="jPanel7" alignment="0" max="32767" attributes="0"/>
+              <Group type="102" attributes="0">
+                  <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lblPresion" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="56" pref="56" max="-2" attributes="0"/>
+                          <Component id="rbtnPreSi" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                          <Component id="rbtnPreNo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lblSangre" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
+                          <Component id="rbtnSangSi" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                          <Component id="rbtnSangNo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lblPSang" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="36" pref="36" max="-2" attributes="0"/>
+                          <Component id="rbtnProbSi" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                          <Component id="rbtnProbNo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lblVih" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="81" pref="81" max="-2" attributes="0"/>
+                          <Component id="rbtnVihSi" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                          <Component id="rbtnVihNo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lblHep" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="109" pref="109" max="-2" attributes="0"/>
+                          <Component id="rbtnHepSi" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                          <Component id="rbtnHepNo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lblEmb" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="89" pref="89" max="-2" attributes="0"/>
+                          <Component id="rbtnEmbSi" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                          <Component id="rbtnEmbNo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lblEVen" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="25" pref="25" max="-2" attributes="0"/>
+                          <Component id="rbtnEVenSi" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                          <Component id="rbtnEVenNo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lblFieb" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="54" pref="54" max="-2" attributes="0"/>
+                          <Component id="rbtnFiebSi" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                          <Component id="rbtnFiebNo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lblAsma" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="119" pref="119" max="-2" attributes="0"/>
+                          <Component id="rbtnAsmSi" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                          <Component id="rbtnAsmNo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lblDiab" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="100" pref="100" max="-2" attributes="0"/>
+                          <Component id="rbtnDiabSi" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                          <Component id="rbtnDiabNo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lblAft" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="52" pref="52" max="-2" attributes="0"/>
+                          <Component id="rbtnAftSi" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                          <Component id="rbtnAftNo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lblTiro" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="106" pref="106" max="-2" attributes="0"/>
+                          <Component id="rbtnTiroSi" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                          <Component id="rbtnTiroNo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="lblRuid" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="21" pref="21" max="-2" attributes="0"/>
+                          <Component id="rbtnRuiSi" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                          <Component id="rbtnRuiNo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="310" pref="310" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <Component id="lblPen" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                          <Component id="rbtnPSi" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                          <Component id="rbtnPNo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <Component id="lblAnest" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <Component id="rbtnAnSi" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                          <Component id="rbtnAnNo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <Component id="lblYodo" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="37" pref="37" max="-2" attributes="0"/>
+                          <Component id="rbtnYSi" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                          <Component id="rbtnYNo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <Component id="lblAsp" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                          <Component id="rbtnASi" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                          <Component id="rbtnANo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="39" pref="39" max="-2" attributes="0"/>
+                          <Component id="txtOtro" min="-2" pref="200" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="jSeparator1" min="-2" pref="680" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="289" pref="289" max="-2" attributes="0"/>
+                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                          <Component id="lblUlcera" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="75" pref="75" max="-2" attributes="0"/>
+                          <Component id="rbtnUgSi" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                          <Component id="rbtnUgNo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                          <Component id="lblPAnti" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="13" pref="13" max="-2" attributes="0"/>
+                          <Component id="rbtnPAntSi" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                          <Component id="rbtnPAntNo" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblMRetro" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblLim" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="rbtnLimSi" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                                  <Component id="rbtnLimNo" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="rbtnMReSi" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                                  <Component id="rbtnMReNo" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <Component id="jPanel7" min="-2" pref="36" max="-2" attributes="0"/>
+                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                          <Component id="lblPen" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="rbtnPSi" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbtnPNo" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
+                          <Component id="lblAnest" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="rbtnAnSi" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbtnAnNo" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblYodo" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbtnYSi" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbtnYNo" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="lblAsp" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbtnASi" min="-2" max="-2" attributes="0"/>
+                      <Component id="rbtnANo" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="4" pref="4" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
+                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Component id="txtOtro" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
+                  <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblPresion" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnPreSi" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnPreNo" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblFieb" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnFiebSi" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnFiebNo" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblSangre" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnSangSi" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="rbtnSangNo" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="lblAsma" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnAsmSi" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnAsmNo" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblPSang" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnProbSi" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="rbtnProbNo" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="lblDiab" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnDiabSi" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnDiabNo" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblVih" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnVihSi" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="rbtnVihNo" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="lblAft" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnAftSi" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnAftNo" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblHep" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnHepSi" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnHepNo" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblTiro" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnTiroSi" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnTiroNo" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblEmb" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnEmbSi" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnEmbNo" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblRuid" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnRuiSi" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnRuiNo" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblEVen" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnEVenSi" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnEVenNo" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblUlcera" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnUgSi" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnUgNo" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                  <Component id="lblPAnti" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="rbtnPAntSi" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnPAntNo" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="lblMRetro" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnMReSi" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnMReNo" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="rbtnLimSi" min="-2" max="-2" attributes="0"/>
+                              <Component id="rbtnLimNo" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Component id="lblLim" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="57" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="jPanel7">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="66" red="0" type="rgb"/>
+            </Property>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="230" max="-2" attributes="0"/>
+                      <Component id="jLabel17" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="230" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel17">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Calibri" size="18" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Historia clinica odontologica"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Component class="javax.swing.JLabel" name="jLabel1">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="20" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Alergias"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblPen">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Penicilina"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblAnest">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Anestecia"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblYodo">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Yodo"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblAsp">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Aspirina"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel6">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Otro"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngPenicilina"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnPSiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngPenicilina"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnPNoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnAnSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngAnestecia"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnAnSiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnAnNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngAnestecia"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnAnNoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnYSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngYodo"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnYSiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnYNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngYodo"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnYNoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnASi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngAspirina"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnASiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnANo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngAspirina"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnANoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JTextField" name="txtOtro">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel7">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="20" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Padecimientos"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSeparator" name="jSeparator1">
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblPresion">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Alta o baja presi&#xf3;n"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblSangre">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Sangre excesiva al cortarse"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblPSang">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Problemas sanguineos"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblVih">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="V.I.H. Positivo"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblMRetro">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Consumo de medicamentos retroviales"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblEmb">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Embarazada"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblPAnti">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Consumo de pastillas anticonceptivas"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblEVen">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Enfermedades venereas"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblHep">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Hepatitis"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblUlcera">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Ulcera gastrica"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblAsma">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Asma"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblFieb">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Fiebre reumatica"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblTiro">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Tiroides"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblDiab">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Diabetes"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblLim">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Limitaciones para abrir la boca"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblRuid">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Ruidos en la mandibula"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lblAft">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Calibri" size="14" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Aftas recurrentes"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPreSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngPresion"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnPreSiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPreNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngPresion"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnPreNoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnSangSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngSangreExcesiva"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnSangSiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnSangNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngSangreExcesiva"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnSangNoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnProbSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngPSanguineos"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnProbSiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnProbNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngPSanguineos"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnProbNoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnVihSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngVIH"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnVihSiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnVihNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngVIH"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnVihNoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnHepSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngHepatitis"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnHepSiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnHepNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngHepatitis"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnHepNoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnEmbSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngEmbarazo"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnEmbSiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnEmbNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngEmbarazo"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnEmbNoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnEVenSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngEVenereas"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnEVenSiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnEVenNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngEVenereas"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnEVenNoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnUgSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngUlceraG"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnUgSiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnUgNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngUlceraG"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnUgNoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPAntSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngCPAntic"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnPAntSiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnPAntNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngCPAntic"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnPAntNoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnMReSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngCMRetroviales"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnMReSiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnMReNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngCMRetroviales"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnMReNoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnFiebSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngFiebre"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnFiebSiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnFiebNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngFiebre"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnFiebNoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnAsmNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngAsma"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnAsmNoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnAsmSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngAsma"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnAsmSiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnDiabNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngDiabetes"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnDiabNoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnDiabSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngDiabetes"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnDiabSiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnAftNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngAftas"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnAftNoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnAftSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngAftas"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnAftSiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnTiroNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngTiroides"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnTiroNoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnTiroSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngTiroides"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnTiroSiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnRuiNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngRuidos"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnRuiNoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnRuiSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngRuidos"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnRuiSiActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnLimNo">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngLimitaciones"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="No"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnLimNoActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JRadioButton" name="rbtnLimSi">
+          <Properties>
+            <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+              <ComponentRef name="btngLimitaciones"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Si"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rbtnLimSiActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
