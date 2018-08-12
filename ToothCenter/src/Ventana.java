@@ -208,7 +208,7 @@ public class Ventana extends javax.swing.JFrame {
         jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
         jCheckBox1.setText("Recordar contraseña");
         jPanel1.add(jCheckBox1);
-        jCheckBox1.setBounds(118, 487, 127, 23);
+        jCheckBox1.setBounds(118, 487, 140, 23);
 
         lblRegistrarse.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         lblRegistrarse.setText("Registrarse");

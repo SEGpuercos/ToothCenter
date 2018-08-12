@@ -1053,22 +1053,18 @@ private void cargarimageperfil()
             
             Statement stmt=cn.createStatement();
             stmt.execute("select*from ImagenPerfil where Id_paciente="+id);
-            
             ResultSet rs=stmt.getResultSet();
-           
-            if(rs!=null)
-            {
-                
+            if(rs!=null){
                 while(rs.next()){
-                    
-                   i1=rs.getString("Img");
-                   if(i1.equals("")){}else{
-                   ImageIcon icon=new ImageIcon(i1);
-                    Icon icono = new ImageIcon(icon.getImage().getScaledInstance(lblFoto.getWidth(), lblFoto.getHeight(), Image.SCALE_DEFAULT));
-                    lblFoto.setText(null);
-                    lblFoto.setIcon(icono);
-                   }
-                   }
+                    i1=rs.getString("Img");
+                    if(i1.equals("")){
+                    }else{
+                        ImageIcon icon=new ImageIcon(i1);
+                        Icon icono = new ImageIcon(icon.getImage().getScaledInstance(lblFoto.getWidth(), lblFoto.getHeight(), Image.SCALE_DEFAULT));
+                        lblFoto.setText(null);
+                        lblFoto.setIcon(icono);
+                    }
+                }
             }else{showMessageDialog(this,"Error");}
             stmt.close();
         }catch(SQLException ex){showMessageDialog(this,ex.getMessage());}
@@ -1085,6 +1081,7 @@ private void cargarimageperfil()
         if(jmGuardar.isEnabled()==false){
             vOdontograma obj=new vOdontograma();
             obj.id=this.id;
+            obj.nombre=this.nombre;
             obj.setVisible(true);
         }
     }//GEN-LAST:event_jmOdontogramaMouseClicked

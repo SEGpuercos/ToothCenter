@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.*;
 
 /*
@@ -47,7 +48,7 @@ public class vOdontograma extends javax.swing.JFrame {
         panel1 = new java.awt.Panel();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        lblNombre = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         btnGuardar = new javax.swing.JButton();
         H1 = new javax.swing.JButton();
@@ -295,6 +296,9 @@ public class vOdontograma extends javax.swing.JFrame {
             public void windowActivated(java.awt.event.WindowEvent evt) {
                 formWindowActivated(evt);
             }
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
         });
 
         panel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -304,8 +308,8 @@ public class vOdontograma extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
         jLabel1.setText("Paciente:");
 
-        jLabel2.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
-        jLabel2.setText("Jose Salvador Santoyo Gonzalez");
+        lblNombre.setFont(new java.awt.Font("Arial", 0, 16)); // NOI18N
+        lblNombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -427,7 +431,7 @@ public class vOdontograma extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(34, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(H1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(h2, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -4963,8 +4967,8 @@ public class vOdontograma extends javax.swing.JFrame {
                         .addGap(27, 27, 27)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)
-                        .addGap(347, 347, 347)
+                        .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(333, 333, 333)
                         .addComponent(lblh))
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addGap(108, 108, 108)
@@ -4981,15 +4985,18 @@ public class vOdontograma extends javax.swing.JFrame {
             panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel1)
-                        .addComponent(jLabel2))
-                    .addGroup(panel1Layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addComponent(lblh)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(panel1Layout.createSequentialGroup()
+                            .addGap(23, 23, 23)
+                            .addComponent(lblh))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(jLabel1)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 11, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
@@ -10699,7 +10706,16 @@ public class vOdontograma extends javax.swing.JFrame {
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         cargarOdontograma();
+        lblNombre.setText(nombre);
     }//GEN-LAST:event_formWindowActivated
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        Object [] opciones ={"Aceptar","Cancelar"};
+        int eleccion = showOptionDialog(rootPane,"¿Seguro que quieres salir?\n¡Se perderan los datos que no hayas guardado!","Confirmar",YES_NO_OPTION,QUESTION_MESSAGE,null,opciones,"Aceptar");
+        if (eleccion == YES_OPTION){
+            System.exit(0);
+        }else{}
+    }//GEN-LAST:event_formWindowClosing
 
     private void cargarOdontograma(){
         try{
@@ -10708,50 +10724,50 @@ public class vOdontograma extends javax.swing.JFrame {
             ResultSet rs=stmt.getResultSet();
             if(rs!=null){
                 while(rs.next()){
-                   d18=rs.getInt("d18"); d17=rs.getInt("d17"); d16=rs.getInt("d16"); d15=rs.getInt("d15"); d14=rs.getInt("d14"); d13=rs.getInt("d13"); d12=rs.getInt("d12"); d11=rs.getInt("d11");
-                   d21=rs.getInt("d21"); d22=rs.getInt("d22"); d23=rs.getInt("d23"); d24=rs.getInt("d24"); d25=rs.getInt("d25"); d26=rs.getInt("d26"); d27=rs.getInt("d27"); d28=rs.getInt("d28");
-                   d48=rs.getInt("d48"); d47=rs.getInt("d47"); d46=rs.getInt("d46"); d45=rs.getInt("d45"); d44=rs.getInt("d44"); d43=rs.getInt("d43"); d42=rs.getInt("d42"); d41=rs.getInt("d41");
-                   d31=rs.getInt("d31"); d32=rs.getInt("d32"); d33=rs.getInt("d33"); d34=rs.getInt("d34"); d35=rs.getInt("d35"); d36=rs.getInt("d36"); d37=rs.getInt("d37"); d38=rs.getInt("d38");
-                   switch(d18){
-                       case 1:{ D18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID18/ID18TR.png"))); break;}
-                       case 2:{ D18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID18/ID18TA.png"))); break;}
-                       case 5:{ D18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID18/ID18CR.png"))); break;}
-                       case 6:{ D18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID18/ID18CA.png"))); break;}
-                       case 7:{ D18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID18/ID18RR.png"))); break;}
-                       case 8:{ D18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID18/ID18RA.png"))); break;}
-                       case 9:{ D18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID18/ID18N.png"))); break;}
-                       case 10:{ D18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID18/ID18DR.png"))); break;}
-                   }
-                   switch(d17){
-                       case 1:{ D17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID17/ID17TR.png"))); break;}
-                       case 2:{ D17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID17/ID17TA.png"))); break;}
-                       case 5:{ D17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID17/ID17CR.png"))); break;}
-                       case 6:{ D17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID17/ID17CA.png"))); break;}
-                       case 7:{ D17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID17/ID17RR.png"))); break;}
-                       case 8:{ D17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID17/ID17RA.png"))); break;}
-                       case 9:{ D17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID17/ID17N.png"))); break;}
-                       case 10:{ D17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID17/ID17DR.png"))); break;}
-                   }
-                   switch(d16){
-                       case 1:{ D16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID16/ID16TR.png"))); break;}
-                       case 2:{ D16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID16/ID16TA.png"))); break;}
-                       case 5:{ D16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID16/ID16CR.png"))); break;}
-                       case 6:{ D16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID16/ID16CA.png"))); break;}
-                       case 7:{ D16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID16/ID16RR.png"))); break;}
-                       case 8:{ D16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID16/ID16RA.png"))); break;}
-                       case 9:{ D16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID16/ID16N.png"))); break;}
-                       case 10:{ D16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID16/ID16DR.png"))); break;}
-                   }
-                   switch(d15){
-                       case 1:{ D15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID15/ID15TR.png"))); break;}
-                       case 2:{ D15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID15/ID15TA.png"))); break;}
-                       case 5:{ D15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID15/ID15CR.png"))); break;}
-                       case 6:{ D15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID15/ID15CA.png"))); break;}
-                       case 7:{ D15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID15/ID15RR.png"))); break;}
-                       case 8:{ D15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID15/ID15RA.png"))); break;}
-                       case 9:{ D15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID15/ID15N.png"))); break;}
-                       case 10:{ D15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID15/ID15DR.png"))); break;}
-                   }
+                    d18=rs.getInt("d18"); d17=rs.getInt("d17"); d16=rs.getInt("d16"); d15=rs.getInt("d15"); d14=rs.getInt("d14"); d13=rs.getInt("d13"); d12=rs.getInt("d12"); d11=rs.getInt("d11");
+                    d21=rs.getInt("d21"); d22=rs.getInt("d22"); d23=rs.getInt("d23"); d24=rs.getInt("d24"); d25=rs.getInt("d25"); d26=rs.getInt("d26"); d27=rs.getInt("d27"); d28=rs.getInt("d28");
+                    d48=rs.getInt("d48"); d47=rs.getInt("d47"); d46=rs.getInt("d46"); d45=rs.getInt("d45"); d44=rs.getInt("d44"); d43=rs.getInt("d43"); d42=rs.getInt("d42"); d41=rs.getInt("d41");
+                    d31=rs.getInt("d31"); d32=rs.getInt("d32"); d33=rs.getInt("d33"); d34=rs.getInt("d34"); d35=rs.getInt("d35"); d36=rs.getInt("d36"); d37=rs.getInt("d37"); d38=rs.getInt("d38");
+                    switch(d18){
+                        case 1:{ D18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID18/ID18TR.png"))); break;}
+                        case 2:{ D18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID18/ID18TA.png"))); break;}
+                        case 5:{ D18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID18/ID18CR.png"))); break;}
+                        case 6:{ D18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID18/ID18CA.png"))); break;}
+                        case 7:{ D18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID18/ID18RR.png"))); break;}
+                        case 8:{ D18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID18/ID18RA.png"))); break;}
+                        case 9:{ D18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID18/ID18N.png"))); break;}
+                        case 10:{ D18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID18/ID18DR.png"))); break;}
+                    }
+                    switch(d17){
+                        case 1:{ D17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID17/ID17TR.png"))); break;}
+                        case 2:{ D17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID17/ID17TA.png"))); break;}
+                        case 5:{ D17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID17/ID17CR.png"))); break;}
+                        case 6:{ D17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID17/ID17CA.png"))); break;}
+                        case 7:{ D17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID17/ID17RR.png"))); break;}
+                        case 8:{ D17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID17/ID17RA.png"))); break;}
+                        case 9:{ D17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID17/ID17N.png"))); break;}
+                        case 10:{ D17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID17/ID17DR.png"))); break;}
+                    }
+                    switch(d16){
+                        case 1:{ D16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID16/ID16TR.png"))); break;}
+                        case 2:{ D16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID16/ID16TA.png"))); break;}
+                        case 5:{ D16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID16/ID16CR.png"))); break;}
+                        case 6:{ D16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID16/ID16CA.png"))); break;}
+                        case 7:{ D16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID16/ID16RR.png"))); break;}
+                        case 8:{ D16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID16/ID16RA.png"))); break;}
+                        case 9:{ D16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID16/ID16N.png"))); break;}
+                        case 10:{ D16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID16/ID16DR.png"))); break;}
+                    }
+                    switch(d15){
+                        case 1:{ D15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID15/ID15TR.png"))); break;}
+                        case 2:{ D15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID15/ID15TA.png"))); break;}
+                        case 5:{ D15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID15/ID15CR.png"))); break;}
+                        case 6:{ D15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID15/ID15CA.png"))); break;}
+                        case 7:{ D15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID15/ID15RR.png"))); break;}
+                        case 8:{ D15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID15/ID15RA.png"))); break;}
+                        case 9:{ D15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID15/ID15N.png"))); break;}
+                        case 10:{ D15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID15/ID15DR.png"))); break;}
+                    }
                    switch(d14){
                        case 1:{ D14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID14/ID14TR.png"))); break;}
                        case 2:{ D14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID14/ID14TA.png"))); break;}
@@ -11022,16 +11038,697 @@ public class vOdontograma extends javax.swing.JFrame {
                        case 9:{ D37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID37/ID37N.png"))); break;}
                        case 10:{ D37.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID37/ID37DR.png"))); break;}
                    }
-                   switch(d38){
-                       case 1:{ D38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID38/ID38TR.png"))); break;}
-                       case 2:{ D38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID38/ID38TA.png"))); break;}
-                       case 5:{ D38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID38/ID38CR.png"))); break;}
-                       case 6:{ D38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID38/ID38CA.png"))); break;}
-                       case 7:{ D38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID38/ID38RR.png"))); break;}
-                       case 8:{ D38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID38/ID38RA.png"))); break;}
-                       case 9:{ D38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID38/ID38N.png"))); break;}
-                       case 10:{ D38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID38/ID38DR.png"))); break;}
-                   }
+                    switch(d38){
+                        case 1:{ D38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID38/ID38TR.png"))); break;}
+                        case 2:{ D38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID38/ID38TA.png"))); break;}
+                        case 5:{ D38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID38/ID38CR.png"))); break;}
+                        case 6:{ D38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID38/ID38CA.png"))); break;}
+                        case 7:{ D38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID38/ID38RR.png"))); break;}
+                        case 8:{ D38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID38/ID38RA.png"))); break;}
+                        case 9:{ D38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID38/ID38N.png"))); break;}
+                        case 10:{ D38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ID38/ID38DR.png"))); break;}
+                    }
+                    //18-11
+                    d18a=rs.getInt("d18a"); d18b=rs.getInt("d18b"); d18c=rs.getInt("d18c"); d18d=rs.getInt("d18d"); d18e=rs.getInt("d18e");
+                    d17a=rs.getInt("d17a"); d17b=rs.getInt("d17b"); d17c=rs.getInt("d17c"); d17d=rs.getInt("d17d"); d17e=rs.getInt("d17e");
+                    d16a=rs.getInt("d16a"); d16b=rs.getInt("d16b"); d16c=rs.getInt("d16c"); d16d=rs.getInt("d16d"); d16e=rs.getInt("d16e");
+                    d15a=rs.getInt("d15a"); d15b=rs.getInt("d15b"); d15c=rs.getInt("d15c"); d15d=rs.getInt("d15d"); d15e=rs.getInt("d15e");
+                    d14a=rs.getInt("d14a"); d14b=rs.getInt("d14b"); d14c=rs.getInt("d14c"); d14d=rs.getInt("d14d"); d14e=rs.getInt("d14e");
+                    d13a=rs.getInt("d13a"); d13b=rs.getInt("d13b"); d13c=rs.getInt("d13c"); d13d=rs.getInt("d13d"); d13e=rs.getInt("d13e");
+                    d12a=rs.getInt("d12a"); d12b=rs.getInt("d12b"); d12c=rs.getInt("d12c"); d12d=rs.getInt("d12d"); d12e=rs.getInt("d12e");
+                    d11a=rs.getInt("d11a"); d17b=rs.getInt("d11b"); d11c=rs.getInt("d11c"); d11d=rs.getInt("d11d"); d11e=rs.getInt("d11e");
+                    //21-28
+                    d21a=rs.getInt("d21a"); d21b=rs.getInt("d21b"); d21c=rs.getInt("d21c"); d21d=rs.getInt("d21d"); d21e=rs.getInt("d21e");
+                    d22a=rs.getInt("d22a"); d22b=rs.getInt("d22b"); d22c=rs.getInt("d22c"); d22d=rs.getInt("d22d"); d22e=rs.getInt("d22e");
+                    d23a=rs.getInt("d23a"); d23b=rs.getInt("d23b"); d23c=rs.getInt("d23c"); d23d=rs.getInt("d23d"); d23e=rs.getInt("d23e");
+                    d24a=rs.getInt("d24a"); d24b=rs.getInt("d24b"); d24c=rs.getInt("d24c"); d24d=rs.getInt("d24d"); d24e=rs.getInt("d24e");
+                    d25a=rs.getInt("d25a"); d25b=rs.getInt("d25b"); d25c=rs.getInt("d25c"); d25d=rs.getInt("d25d"); d25e=rs.getInt("d25e");
+                    d26a=rs.getInt("d26a"); d26b=rs.getInt("d26b"); d26c=rs.getInt("d26c"); d26d=rs.getInt("d26d"); d26e=rs.getInt("d26e");
+                    d27a=rs.getInt("d27a"); d27b=rs.getInt("d27b"); d27c=rs.getInt("d27c"); d27d=rs.getInt("d27d"); d27e=rs.getInt("d27e");
+                    d28a=rs.getInt("d28a"); d28b=rs.getInt("d28b"); d28c=rs.getInt("d28c"); d28d=rs.getInt("d28d"); d28e=rs.getInt("d28e");
+                    //48-41
+                    d48a=rs.getInt("d48a"); d48b=rs.getInt("d48b"); d48c=rs.getInt("d48c"); d48d=rs.getInt("d48d"); d48e=rs.getInt("d48e");
+                    d47a=rs.getInt("d47a"); d47b=rs.getInt("d47b"); d47c=rs.getInt("d47c"); d47d=rs.getInt("d47d"); d47e=rs.getInt("d47e");
+                    d46a=rs.getInt("d46a"); d46b=rs.getInt("d46b"); d46c=rs.getInt("d46c"); d46d=rs.getInt("d46d"); d46e=rs.getInt("d46e");
+                    d45a=rs.getInt("d45a"); d45b=rs.getInt("d45b"); d45c=rs.getInt("d45c"); d45d=rs.getInt("d45d"); d45e=rs.getInt("d45e");
+                    d44a=rs.getInt("d44a"); d44b=rs.getInt("d44b"); d44c=rs.getInt("d44c"); d44d=rs.getInt("d44d"); d44e=rs.getInt("d44e");
+                    d43a=rs.getInt("d43a"); d43b=rs.getInt("d43b"); d43c=rs.getInt("d43c"); d43d=rs.getInt("d43d"); d43e=rs.getInt("d43e");
+                    d42a=rs.getInt("d42a"); d42b=rs.getInt("d42b"); d42c=rs.getInt("d42c"); d42d=rs.getInt("d42d"); d42e=rs.getInt("d42e");
+                    d41a=rs.getInt("d41a"); d47b=rs.getInt("d41b"); d41c=rs.getInt("d41c"); d41d=rs.getInt("d41d"); d41e=rs.getInt("d41e");
+                    //31-38
+                    d31a=rs.getInt("d31a"); d31b=rs.getInt("d31b"); d31c=rs.getInt("d31c"); d31d=rs.getInt("d31d"); d31e=rs.getInt("d31e");
+                    d32a=rs.getInt("d32a"); d32b=rs.getInt("d32b"); d32c=rs.getInt("d32c"); d32d=rs.getInt("d32d"); d32e=rs.getInt("d32e");
+                    d33a=rs.getInt("d33a"); d33b=rs.getInt("d33b"); d33c=rs.getInt("d33c"); d33d=rs.getInt("d33d"); d33e=rs.getInt("d33e");
+                    d34a=rs.getInt("d34a"); d34b=rs.getInt("d34b"); d34c=rs.getInt("d34c"); d34d=rs.getInt("d34d"); d34e=rs.getInt("d34e");
+                    d35a=rs.getInt("d35a"); d35b=rs.getInt("d35b"); d35c=rs.getInt("d35c"); d35d=rs.getInt("d35d"); d35e=rs.getInt("d35e");
+                    d36a=rs.getInt("d36a"); d36b=rs.getInt("d36b"); d36c=rs.getInt("d36c"); d36d=rs.getInt("d36d"); d36e=rs.getInt("d36e");
+                    d37a=rs.getInt("d37a"); d37b=rs.getInt("d37b"); d37c=rs.getInt("d37c"); d37d=rs.getInt("d37d"); d37e=rs.getInt("d37e");
+                    d38a=rs.getInt("d38a"); d38b=rs.getInt("d38b"); d38c=rs.getInt("d38c"); d38d=rs.getInt("d38d"); d38e=rs.getInt("d38e");
+                    //Inicio de carga
+                    //18-11
+                    switch(d18a){
+                        case 3: {D18A.setBackground(Color.RED); break;}
+                        case 4: {D18A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d17a){
+                        case 3: {D17A.setBackground(Color.RED); break;}
+                        case 4: {D17A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d16a){
+                        case 3: {D16A.setBackground(Color.RED); break;}
+                        case 4: {D16A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d15a){
+                        case 3: {D15A.setBackground(Color.RED); break;}
+                        case 4: {D15A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d14a){
+                        case 3: {D14A.setBackground(Color.RED); break;}
+                        case 4: {D14A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d13a){
+                        case 3: {D13A.setBackground(Color.RED); break;}
+                        case 4: {D13A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d12a){
+                        case 3: {D12A.setBackground(Color.RED); break;}
+                        case 4: {D12A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d11a){
+                        case 3: {D11A.setBackground(Color.RED); break;}
+                        case 4: {D11A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d18b){
+                        case 3: {D18B.setBackground(Color.RED); break;}
+                        case 4: {D18B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d17b){
+                        case 3: {D17B.setBackground(Color.RED); break;}
+                        case 4: {D17B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d16b){
+                        case 3: {D16B.setBackground(Color.RED); break;}
+                        case 4: {D16B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d15b){
+                        case 3: {D15B.setBackground(Color.RED); break;}
+                        case 4: {D15B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d14b){
+                        case 3: {D14B.setBackground(Color.RED); break;}
+                        case 4: {D14B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d13b){
+                        case 3: {D13B.setBackground(Color.RED); break;}
+                        case 4: {D13B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d12b){
+                        case 3: {D12B.setBackground(Color.RED); break;}
+                        case 4: {D12B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d11b){
+                        case 3: {D11B.setBackground(Color.RED); break;}
+                        case 4: {D11B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d18c){
+                        case 3: {D18C.setBackground(Color.RED); break;}
+                        case 4: {D18C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d17c){
+                        case 3: {D17C.setBackground(Color.RED); break;}
+                        case 4: {D17C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d16c){
+                        case 3: {D16C.setBackground(Color.RED); break;}
+                        case 4: {D16C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d15c){
+                        case 3: {D15C.setBackground(Color.RED); break;}
+                        case 4: {D15C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d14c){
+                        case 3: {D14C.setBackground(Color.RED); break;}
+                        case 4: {D14C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d13c){
+                        case 3: {D13C.setBackground(Color.RED); break;}
+                        case 4: {D13C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d12c){
+                        case 3: {D12C.setBackground(Color.RED); break;}
+                        case 4: {D12C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d11c){
+                        case 3: {D11C.setBackground(Color.RED); break;}
+                        case 4: {D11C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d18d){
+                        case 3: {D18D.setBackground(Color.RED); break;}
+                        case 4: {D18D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d17d){
+                        case 3: {D17D.setBackground(Color.RED); break;}
+                        case 4: {D17D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d16d){
+                        case 3: {D16D.setBackground(Color.RED); break;}
+                        case 4: {D16D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d15d){
+                        case 3: {D15D.setBackground(Color.RED); break;}
+                        case 4: {D15D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d14d){
+                        case 3: {D14D.setBackground(Color.RED); break;}
+                        case 4: {D14D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d13d){
+                        case 3: {D13D.setBackground(Color.RED); break;}
+                        case 4: {D13D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d12d){
+                        case 3: {D12D.setBackground(Color.RED); break;}
+                        case 4: {D12D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d11d){
+                        case 3: {D11D.setBackground(Color.RED); break;}
+                        case 4: {D11D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d18e){
+                        case 3: {D18E.setBackground(Color.RED); break;}
+                        case 4: {D18E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d17e){
+                        case 3: {D17E.setBackground(Color.RED); break;}
+                        case 4: {D17E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d16e){
+                        case 3: {D16E.setBackground(Color.RED); break;}
+                        case 4: {D16E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d15e){
+                        case 3: {D15E.setBackground(Color.RED); break;}
+                        case 4: {D15E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d14e){
+                        case 3: {D14E.setBackground(Color.RED); break;}
+                        case 4: {D14E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d13e){
+                        case 3: {D13E.setBackground(Color.RED); break;}
+                        case 4: {D13E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d12e){
+                        case 3: {D12E.setBackground(Color.RED); break;}
+                        case 4: {D12E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d11e){
+                        case 3: {D11E.setBackground(Color.RED); break;}
+                        case 4: {D11E.setBackground(Color.BLUE); break;}
+                    }
+                    //21-28 --------------------------------------------
+                    switch(d21a){
+                        case 3: {D21A.setBackground(Color.RED); break;}
+                        case 4: {D21A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d22a){
+                        case 3: {D22A.setBackground(Color.RED); break;}
+                        case 4: {D22A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d23a){
+                        case 3: {D23A.setBackground(Color.RED); break;}
+                        case 4: {D23A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d24a){
+                        case 3: {D24A.setBackground(Color.RED); break;}
+                        case 4: {D24A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d25a){
+                        case 3: {D25A.setBackground(Color.RED); break;}
+                        case 4: {D25A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d26a){
+                        case 3: {D26A.setBackground(Color.RED); break;}
+                        case 4: {D26A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d27a){
+                        case 3: {D27A.setBackground(Color.RED); break;}
+                        case 4: {D27A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d28a){
+                        case 3: {D28A.setBackground(Color.RED); break;}
+                        case 4: {D28A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d21b){
+                        case 3: {D21B.setBackground(Color.RED); break;}
+                        case 4: {D21B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d22b){
+                        case 3: {D22B.setBackground(Color.RED); break;}
+                        case 4: {D22B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d23b){
+                        case 3: {D23B.setBackground(Color.RED); break;}
+                        case 4: {D23B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d24b){
+                        case 3: {D24B.setBackground(Color.RED); break;}
+                        case 4: {D24B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d25b){
+                        case 3: {D25B.setBackground(Color.RED); break;}
+                        case 4: {D25B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d26b){
+                        case 3: {D26B.setBackground(Color.RED); break;}
+                        case 4: {D26B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d27b){
+                        case 3: {D27B.setBackground(Color.RED); break;}
+                        case 4: {D27B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d28b){
+                        case 3: {D28B.setBackground(Color.RED); break;}
+                        case 4: {D28B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d21c){
+                        case 3: {D21C.setBackground(Color.RED); break;}
+                        case 4: {D21C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d22c){
+                        case 3: {D22C.setBackground(Color.RED); break;}
+                        case 4: {D22C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d23c){
+                        case 3: {D23C.setBackground(Color.RED); break;}
+                        case 4: {D23C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d24c){
+                        case 3: {D24C.setBackground(Color.RED); break;}
+                        case 4: {D24C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d25c){
+                        case 3: {D25C.setBackground(Color.RED); break;}
+                        case 4: {D25C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d26c){
+                        case 3: {D26C.setBackground(Color.RED); break;}
+                        case 4: {D26C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d27c){
+                        case 3: {D27C.setBackground(Color.RED); break;}
+                        case 4: {D27C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d28c){
+                        case 3: {D28C.setBackground(Color.RED); break;}
+                        case 4: {D28C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d21d){
+                        case 3: {D21D.setBackground(Color.RED); break;}
+                        case 4: {D21D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d22d){
+                        case 3: {D22D.setBackground(Color.RED); break;}
+                        case 4: {D22D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d23d){
+                        case 3: {D23D.setBackground(Color.RED); break;}
+                        case 4: {D23D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d24d){
+                        case 3: {D24D.setBackground(Color.RED); break;}
+                        case 4: {D24D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d25d){
+                        case 3: {D25D.setBackground(Color.RED); break;}
+                        case 4: {D25D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d26d){
+                        case 3: {D26D.setBackground(Color.RED); break;}
+                        case 4: {D26D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d27d){
+                        case 3: {D27D.setBackground(Color.RED); break;}
+                        case 4: {D27D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d28d){
+                        case 3: {D28D.setBackground(Color.RED); break;}
+                        case 4: {D28D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d21e){
+                        case 3: {D21E.setBackground(Color.RED); break;}
+                        case 4: {D21E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d22e){
+                        case 3: {D22E.setBackground(Color.RED); break;}
+                        case 4: {D22E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d23e){
+                        case 3: {D23E.setBackground(Color.RED); break;}
+                        case 4: {D23E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d24e){
+                        case 3: {D24E.setBackground(Color.RED); break;}
+                        case 4: {D24E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d25e){
+                        case 3: {D25E.setBackground(Color.RED); break;}
+                        case 4: {D25E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d26e){
+                        case 3: {D26E.setBackground(Color.RED); break;}
+                        case 4: {D26E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d27e){
+                        case 3: {D27E.setBackground(Color.RED); break;}
+                        case 4: {D27E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d28e){
+                        case 3: {D28E.setBackground(Color.RED); break;}
+                        case 4: {D28E.setBackground(Color.BLUE); break;}
+                    }
+                    //48-41 --------------------------------------------
+                    switch(d48a){
+                        case 3: {D48A.setBackground(Color.RED); break;}
+                        case 4: {D48A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d47a){
+                        case 3: {D47A.setBackground(Color.RED); break;}
+                        case 4: {D47A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d46a){
+                        case 3: {D46A.setBackground(Color.RED); break;}
+                        case 4: {D46A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d45a){
+                        case 3: {D45A.setBackground(Color.RED); break;}
+                        case 4: {D45A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d44a){
+                        case 3: {D44A.setBackground(Color.RED); break;}
+                        case 4: {D44A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d43a){
+                        case 3: {D43A.setBackground(Color.RED); break;}
+                        case 4: {D43A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d42a){
+                        case 3: {D42A.setBackground(Color.RED); break;}
+                        case 4: {D42A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d41a){
+                        case 3: {D41A.setBackground(Color.RED); break;}
+                        case 4: {D41A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d48b){
+                        case 3: {D48B.setBackground(Color.RED); break;}
+                        case 4: {D48B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d47b){
+                        case 3: {D47B.setBackground(Color.RED); break;}
+                        case 4: {D47B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d46b){
+                        case 3: {D46B.setBackground(Color.RED); break;}
+                        case 4: {D46B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d45b){
+                        case 3: {D45B.setBackground(Color.RED); break;}
+                        case 4: {D45B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d44b){
+                        case 3: {D44B.setBackground(Color.RED); break;}
+                        case 4: {D44B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d43b){
+                        case 3: {D43B.setBackground(Color.RED); break;}
+                        case 4: {D43B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d42b){
+                        case 3: {D42B.setBackground(Color.RED); break;}
+                        case 4: {D42B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d41b){
+                        case 3: {D41B.setBackground(Color.RED); break;}
+                        case 4: {D41B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d48c){
+                        case 3: {D48C.setBackground(Color.RED); break;}
+                        case 4: {D48C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d47c){
+                        case 3: {D47C.setBackground(Color.RED); break;}
+                        case 4: {D47C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d46c){
+                        case 3: {D46C.setBackground(Color.RED); break;}
+                        case 4: {D46C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d45c){
+                        case 3: {D45C.setBackground(Color.RED); break;}
+                        case 4: {D45C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d44c){
+                        case 3: {D44C.setBackground(Color.RED); break;}
+                        case 4: {D44C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d43c){
+                        case 3: {D43C.setBackground(Color.RED); break;}
+                        case 4: {D43C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d42c){
+                        case 3: {D42C.setBackground(Color.RED); break;}
+                        case 4: {D42C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d41c){
+                        case 3: {D41C.setBackground(Color.RED); break;}
+                        case 4: {D41C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d48d){
+                        case 3: {D48D.setBackground(Color.RED); break;}
+                        case 4: {D48D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d47d){
+                        case 3: {D47D.setBackground(Color.RED); break;}
+                        case 4: {D47D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d46d){
+                        case 3: {D46D.setBackground(Color.RED); break;}
+                        case 4: {D46D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d45d){
+                        case 3: {D45D.setBackground(Color.RED); break;}
+                        case 4: {D45D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d44d){
+                        case 3: {D44D.setBackground(Color.RED); break;}
+                        case 4: {D44D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d43d){
+                        case 3: {D43D.setBackground(Color.RED); break;}
+                        case 4: {D43D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d42d){
+                        case 3: {D42D.setBackground(Color.RED); break;}
+                        case 4: {D42D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d41d){
+                        case 3: {D41D.setBackground(Color.RED); break;}
+                        case 4: {D41D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d48e){
+                        case 3: {D48E.setBackground(Color.RED); break;}
+                        case 4: {D48E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d47e){
+                        case 3: {D47E.setBackground(Color.RED); break;}
+                        case 4: {D47E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d46e){
+                        case 3: {D46E.setBackground(Color.RED); break;}
+                        case 4: {D46E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d45e){
+                        case 3: {D45E.setBackground(Color.RED); break;}
+                        case 4: {D45E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d44e){
+                        case 3: {D44E.setBackground(Color.RED); break;}
+                        case 4: {D44E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d43e){
+                        case 3: {D43E.setBackground(Color.RED); break;}
+                        case 4: {D43E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d42e){
+                        case 3: {D42E.setBackground(Color.RED); break;}
+                        case 4: {D42E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d41e){
+                        case 3: {D41E.setBackground(Color.RED); break;}
+                        case 4: {D41E.setBackground(Color.BLUE); break;}
+                    }
+                    //31-38 -------------------------------------------
+                    switch(d31a){
+                        case 3: {D31A.setBackground(Color.RED); break;}
+                        case 4: {D31A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d32a){
+                        case 3: {D32A.setBackground(Color.RED); break;}
+                        case 4: {D32A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d33a){
+                        case 3: {D33A.setBackground(Color.RED); break;}
+                        case 4: {D33A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d34a){
+                        case 3: {D34A.setBackground(Color.RED); break;}
+                        case 4: {D34A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d35a){
+                        case 3: {D35A.setBackground(Color.RED); break;}
+                        case 4: {D35A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d36a){
+                        case 3: {D36A.setBackground(Color.RED); break;}
+                        case 4: {D36A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d37a){
+                        case 3: {D37A.setBackground(Color.RED); break;}
+                        case 4: {D37A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d38a){
+                        case 3: {D38A.setBackground(Color.RED); break;}
+                        case 4: {D38A.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d31b){
+                        case 3: {D31B.setBackground(Color.RED); break;}
+                        case 4: {D31B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d32b){
+                        case 3: {D32B.setBackground(Color.RED); break;}
+                        case 4: {D32B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d33b){
+                        case 3: {D33B.setBackground(Color.RED); break;}
+                        case 4: {D33B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d34b){
+                        case 3: {D34B.setBackground(Color.RED); break;}
+                        case 4: {D34B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d35b){
+                        case 3: {D35B.setBackground(Color.RED); break;}
+                        case 4: {D35B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d36b){
+                        case 3: {D36B.setBackground(Color.RED); break;}
+                        case 4: {D36B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d37b){
+                        case 3: {D37B.setBackground(Color.RED); break;}
+                        case 4: {D37B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d38b){
+                        case 3: {D38B.setBackground(Color.RED); break;}
+                        case 4: {D38B.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d31c){
+                        case 3: {D31C.setBackground(Color.RED); break;}
+                        case 4: {D31C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d32c){
+                        case 3: {D32C.setBackground(Color.RED); break;}
+                        case 4: {D32C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d33c){
+                        case 3: {D33C.setBackground(Color.RED); break;}
+                        case 4: {D33C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d34c){
+                        case 3: {D34C.setBackground(Color.RED); break;}
+                        case 4: {D34C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d35c){
+                        case 3: {D35C.setBackground(Color.RED); break;}
+                        case 4: {D35C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d36c){
+                        case 3: {D36C.setBackground(Color.RED); break;}
+                        case 4: {D36C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d37c){
+                        case 3: {D37C.setBackground(Color.RED); break;}
+                        case 4: {D37C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d38c){
+                        case 3: {D38C.setBackground(Color.RED); break;}
+                        case 4: {D38C.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d31d){
+                        case 3: {D31D.setBackground(Color.RED); break;}
+                        case 4: {D31D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d32d){
+                        case 3: {D32D.setBackground(Color.RED); break;}
+                        case 4: {D32D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d33d){
+                        case 3: {D33D.setBackground(Color.RED); break;}
+                        case 4: {D33D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d34d){
+                        case 3: {D34D.setBackground(Color.RED); break;}
+                        case 4: {D34D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d35d){
+                        case 3: {D35D.setBackground(Color.RED); break;}
+                        case 4: {D35D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d36d){
+                        case 3: {D36D.setBackground(Color.RED); break;}
+                        case 4: {D36D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d37d){
+                        case 3: {D37D.setBackground(Color.RED); break;}
+                        case 4: {D37D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d38d){
+                        case 3: {D38D.setBackground(Color.RED); break;}
+                        case 4: {D38D.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d31e){
+                        case 3: {D31E.setBackground(Color.RED); break;}
+                        case 4: {D31E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d32e){
+                        case 3: {D32E.setBackground(Color.RED); break;}
+                        case 4: {D32E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d33e){
+                        case 3: {D33E.setBackground(Color.RED); break;}
+                        case 4: {D33E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d34e){
+                        case 3: {D34E.setBackground(Color.RED); break;}
+                        case 4: {D34E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d35e){
+                        case 3: {D35E.setBackground(Color.RED); break;}
+                        case 4: {D35E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d36e){
+                        case 3: {D36E.setBackground(Color.RED); break;}
+                        case 4: {D36E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d37e){
+                        case 3: {D37E.setBackground(Color.RED); break;}
+                        case 4: {D37E.setBackground(Color.BLUE); break;}
+                    }
+                    switch(d38e){
+                        case 3: {D38E.setBackground(Color.RED); break;}
+                        case 4: {D38E.setBackground(Color.BLUE); break;}
+                    }
                 }
             }else{showMessageDialog(this,"Error");}
             stmt.close();
@@ -11077,6 +11774,7 @@ public class vOdontograma extends javax.swing.JFrame {
     }
     int numH = 0;
     int id;
+    String nombre;
     int d18,d17,d16,d15,d14,d13,d12,d11,d21,d22,d23,d24,d25,d26,d27,d28,d48,d47,d46,d45,d44,d43,d42,d41,d31,d32,d33,d34,d35,d36,d37,d38;
     int d18a,d18b,d18c,d18d,d18e,d17a,d17b,d17c,d17d,d17e,d16a,d16b,d16c,d16d,d16e,d15a,d15b,d15c,d15d,d15e,d14a,d14b,d14c,d14d,d14e,d13a,d13b,d13c,d13d,d13e,
         d12a,d12b,d12c,d12d,d12e,d11a,d11b,d11c,d11d,d11e,d21a,d21b,d21c,d21d,d21e,d22a,d22b,d22c,d22d,d22e,d23a,d23b,d23c,d23d,d23e,d24a,d24b,d24c,d24d,d24e,d25a,d25b,d25c,d25d,d25e,
@@ -11300,7 +11998,6 @@ public class vOdontograma extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
@@ -11328,6 +12025,7 @@ public class vOdontograma extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblh;
     private java.awt.Panel panel1;
     // End of variables declaration//GEN-END:variables
