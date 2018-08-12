@@ -61,9 +61,9 @@ public class vOdontograma extends javax.swing.JFrame {
         h8 = new javax.swing.JButton();
         hb = new javax.swing.JButton();
         h9 = new javax.swing.JButton();
+        lblh = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        lblh = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         D18 = new javax.swing.JButton();
         D17 = new javax.swing.JButton();
@@ -402,6 +402,8 @@ public class vOdontograma extends javax.swing.JFrame {
             }
         });
 
+        lblh.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -425,13 +427,18 @@ public class vOdontograma extends javax.swing.JFrame {
                             .addComponent(h9, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(75, 75, 75)
-                        .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(113, 113, 113)
+                        .addComponent(lblh, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblh, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(H1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(h2, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -471,8 +478,6 @@ public class vOdontograma extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 33, Short.MAX_VALUE)
         );
-
-        lblh.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
@@ -4967,9 +4972,7 @@ public class vOdontograma extends javax.swing.JFrame {
                         .addGap(27, 27, 27)
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(333, 333, 333)
-                        .addComponent(lblh))
+                        .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addGap(108, 108, 108)
                         .addComponent(jLabel3))
@@ -4986,13 +4989,9 @@ public class vOdontograma extends javax.swing.JFrame {
             .addGroup(panel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(panel1Layout.createSequentialGroup()
-                            .addGap(23, 23, 23)
-                            .addComponent(lblh))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel1)))
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel1))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -6455,6 +6454,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D18A.setBackground(Color.WHITE);
+                    d18a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -6481,6 +6481,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D18B.setBackground(Color.WHITE);
+                    d18b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -6507,6 +6508,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D18C.setBackground(Color.WHITE);
+                    d18c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -6533,6 +6535,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D18D.setBackground(Color.WHITE);
+                    d18d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -6559,6 +6562,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D18E.setBackground(Color.WHITE);
+                    d18e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -6585,6 +6589,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D17A.setBackground(Color.WHITE);
+                    d17a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -6611,6 +6616,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D17B.setBackground(Color.WHITE);
+                    d17b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -6637,6 +6643,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D17C.setBackground(Color.WHITE);
+                    d17c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -6663,6 +6670,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D17D.setBackground(Color.WHITE);
+                    d17d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -6689,6 +6697,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D17E.setBackground(Color.WHITE);
+                    d17e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -6715,6 +6724,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D16A.setBackground(Color.WHITE);
+                    d16a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -6741,6 +6751,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D16B.setBackground(Color.WHITE);
+                    d16b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -6767,6 +6778,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D16C.setBackground(Color.WHITE);
+                    d16c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -6793,6 +6805,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D16D.setBackground(Color.WHITE);
+                    d16d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -6819,6 +6832,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D16E.setBackground(Color.WHITE);
+                    d16e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -6845,6 +6859,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D15A.setBackground(Color.WHITE);
+                    d15a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -6871,6 +6886,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D15B.setBackground(Color.WHITE);
+                    d15b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -6897,6 +6913,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D15C.setBackground(Color.WHITE);
+                    d15c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -6923,6 +6940,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D15D.setBackground(Color.WHITE);
+                    d15d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -6949,6 +6967,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D15E.setBackground(Color.WHITE);
+                    d15e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -6975,6 +6994,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D14A.setBackground(Color.WHITE);
+                    d14a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7001,6 +7021,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D14B.setBackground(Color.WHITE);
+                    d14b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7027,6 +7048,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D14C.setBackground(Color.WHITE);
+                    d14c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7053,6 +7075,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D14D.setBackground(Color.WHITE);
+                    d14d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7079,6 +7102,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D14E.setBackground(Color.WHITE);
+                    d14e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7105,6 +7129,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D13A.setBackground(Color.WHITE);
+                    d13a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7131,6 +7156,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D13B.setBackground(Color.WHITE);
+                    d13b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7161,6 +7187,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D13D.setBackground(Color.WHITE);
+                    d13d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7191,6 +7218,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D13C.setBackground(Color.WHITE);
+                    d13c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7217,6 +7245,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D13E.setBackground(Color.WHITE);
+                    d13e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7243,6 +7272,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D12A.setBackground(Color.WHITE);
+                    d12a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7268,6 +7298,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D12B.setBackground(Color.WHITE);
+                    d12b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7294,6 +7325,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D12C.setBackground(Color.WHITE);
+                    d12c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7320,6 +7352,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D12D.setBackground(Color.WHITE);
+                    d12d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7346,6 +7379,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D12E.setBackground(Color.WHITE);
+                    d12e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7372,6 +7406,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D11A.setBackground(Color.WHITE);
+                    d11a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7398,6 +7433,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D11B.setBackground(Color.WHITE);
+                    d11b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7424,6 +7460,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D11C.setBackground(Color.WHITE);
+                    d11c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7450,6 +7487,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D11D.setBackground(Color.WHITE);
+                    d11d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7476,6 +7514,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D11E.setBackground(Color.WHITE);
+                    d11e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7502,6 +7541,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D21A.setBackground(Color.WHITE);
+                    d21a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7528,6 +7568,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D21B.setBackground(Color.WHITE);
+                    d21b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7554,6 +7595,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D21C.setBackground(Color.WHITE);
+                    d21c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7580,6 +7622,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D21D.setBackground(Color.WHITE);
+                    d21d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7606,6 +7649,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D21E.setBackground(Color.WHITE);
+                    d21e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7632,6 +7676,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D22A.setBackground(Color.WHITE);
+                    d22a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7658,6 +7703,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D22B.setBackground(Color.WHITE);
+                    d22b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7684,6 +7730,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D22C.setBackground(Color.WHITE);
+                    d22c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7710,6 +7757,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D22D.setBackground(Color.WHITE);
+                    d22d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7736,6 +7784,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D22E.setBackground(Color.WHITE);
+                    d22e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7762,6 +7811,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D23A.setBackground(Color.WHITE);
+                    d23a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7788,6 +7838,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D23B.setBackground(Color.WHITE);
+                    d23b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7814,6 +7865,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D23C.setBackground(Color.WHITE);
+                    d23c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7840,6 +7892,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D23D.setBackground(Color.WHITE);
+                    d23d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7866,6 +7919,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D23E.setBackground(Color.WHITE);
+                    d23e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7892,6 +7946,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D24A.setBackground(Color.WHITE);
+                    d24a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7918,6 +7973,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D24B.setBackground(Color.WHITE);
+                    d24b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7944,6 +8000,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D24C.setBackground(Color.WHITE);
+                    d24c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7970,6 +8027,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D24D.setBackground(Color.WHITE);
+                    d24d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -7996,6 +8054,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D24E.setBackground(Color.WHITE);
+                    d24e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8022,6 +8081,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D25A.setBackground(Color.WHITE);
+                    d25a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8048,6 +8108,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D25B.setBackground(Color.WHITE);
+                    d25b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8074,6 +8135,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D25C.setBackground(Color.WHITE);
+                    d25c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8100,6 +8162,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D25D.setBackground(Color.WHITE);
+                    d25d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8126,6 +8189,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D25E.setBackground(Color.WHITE);
+                    d25e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8152,6 +8216,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D26A.setBackground(Color.WHITE);
+                    d26a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8178,6 +8243,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D26B.setBackground(Color.WHITE);
+                    d26b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8204,6 +8270,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D26C.setBackground(Color.WHITE);
+                    d26c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8230,6 +8297,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D26D.setBackground(Color.WHITE);
+                    d26d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8256,6 +8324,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D26E.setBackground(Color.WHITE);
+                    d26e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8282,6 +8351,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D27A.setBackground(Color.WHITE);
+                    d27a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8308,6 +8378,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D27B.setBackground(Color.WHITE);
+                    d27b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8334,6 +8405,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D27C.setBackground(Color.WHITE);
+                    d27c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8360,6 +8432,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D27D.setBackground(Color.WHITE);
+                    d27d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8386,6 +8459,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D27E.setBackground(Color.WHITE);
+                    d27e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8412,6 +8486,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D28A.setBackground(Color.WHITE);
+                    d28a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8438,6 +8513,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D28B.setBackground(Color.WHITE);
+                    d28b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8464,6 +8540,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D28C.setBackground(Color.WHITE);
+                    d28c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8490,6 +8567,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D28D.setBackground(Color.WHITE);
+                    d28d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8516,6 +8594,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D28E.setBackground(Color.WHITE);
+                    d28e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8542,6 +8621,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D48A.setBackground(Color.WHITE);
+                    d48a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8568,6 +8648,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D48B.setBackground(Color.WHITE);
+                    d48b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8594,6 +8675,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D48C.setBackground(Color.WHITE);
+                    d48c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8620,6 +8702,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D48D.setBackground(Color.WHITE);
+                    d48d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8646,6 +8729,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D48E.setBackground(Color.WHITE);
+                    d48e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8672,6 +8756,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D47A.setBackground(Color.WHITE);
+                    d47a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8698,6 +8783,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D47B.setBackground(Color.WHITE);
+                    d47b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8724,6 +8810,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D47C.setBackground(Color.WHITE);
+                    d47c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8750,6 +8837,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D47D.setBackground(Color.WHITE);
+                    d47d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8776,6 +8864,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D47E.setBackground(Color.WHITE);
+                    d47e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8802,6 +8891,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D46A.setBackground(Color.WHITE);
+                    d46a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8828,6 +8918,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D46B.setBackground(Color.WHITE);
+                    d46b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8854,6 +8945,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D46C.setBackground(Color.WHITE);
+                    d46c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8880,6 +8972,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D46D.setBackground(Color.WHITE);
+                    d46d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8906,6 +8999,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D46E.setBackground(Color.WHITE);
+                    d46e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8932,6 +9026,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D45A.setBackground(Color.WHITE);
+                    d45a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8958,6 +9053,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D45B.setBackground(Color.WHITE);
+                    d45b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -8984,6 +9080,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D45C.setBackground(Color.WHITE);
+                    d45c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9010,6 +9107,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D45D.setBackground(Color.WHITE);
+                    d45d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9036,6 +9134,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D45E.setBackground(Color.WHITE);
+                    d45e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9062,6 +9161,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D44A.setBackground(Color.WHITE);
+                    d44a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9088,6 +9188,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D44B.setBackground(Color.WHITE);
+                    d44b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9114,6 +9215,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D44C.setBackground(Color.WHITE);
+                    d44c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9140,6 +9242,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D44D.setBackground(Color.WHITE);
+                    d44d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9166,6 +9269,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D44E.setBackground(Color.WHITE);
+                    d44e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9192,6 +9296,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D43A.setBackground(Color.WHITE);
+                    d43a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9218,6 +9323,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D43B.setBackground(Color.WHITE);
+                    d43b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9244,6 +9350,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D43C.setBackground(Color.WHITE);
+                    d43c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9270,6 +9377,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D43D.setBackground(Color.WHITE);
+                    d43d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9296,6 +9404,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D43E.setBackground(Color.WHITE);
+                    d43e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9322,6 +9431,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D42A.setBackground(Color.WHITE);
+                    d42a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9348,6 +9458,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D42B.setBackground(Color.WHITE);
+                    d42b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9374,6 +9485,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D42C.setBackground(Color.WHITE);
+                    d42c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9400,6 +9512,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D42D.setBackground(Color.WHITE);
+                    d42d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9426,6 +9539,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D42E.setBackground(Color.WHITE);
+                    d42e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9452,6 +9566,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D41A.setBackground(Color.WHITE);
+                    d41a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9478,6 +9593,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D41B.setBackground(Color.WHITE);
+                    d41b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9504,6 +9620,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D41C.setBackground(Color.WHITE);
+                    d41c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9530,6 +9647,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D41D.setBackground(Color.WHITE);
+                    d41d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9556,6 +9674,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D41E.setBackground(Color.WHITE);
+                    d41e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9582,6 +9701,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D31A.setBackground(Color.WHITE);
+                    d31a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9608,6 +9728,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D31B.setBackground(Color.WHITE);
+                    d31b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9634,6 +9755,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D31C.setBackground(Color.WHITE);
+                    d31c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9660,6 +9782,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D31D.setBackground(Color.WHITE);
+                    d31d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9686,6 +9809,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D31E.setBackground(Color.WHITE);
+                    d31e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9712,6 +9836,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D32A.setBackground(Color.WHITE);
+                    d32a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9738,6 +9863,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D32B.setBackground(Color.WHITE);
+                    d32b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9764,6 +9890,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D32C.setBackground(Color.WHITE);
+                    d32c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9790,6 +9917,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D32D.setBackground(Color.WHITE);
+                    d32d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9816,6 +9944,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D32E.setBackground(Color.WHITE);
+                    d32e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9842,6 +9971,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D33A.setBackground(Color.WHITE);
+                    d33a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9868,6 +9998,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D33B.setBackground(Color.WHITE);
+                    d33b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9894,6 +10025,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D33C.setBackground(Color.WHITE);
+                    d33c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9920,6 +10052,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D33D.setBackground(Color.WHITE);
+                    d33d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9946,6 +10079,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D33E.setBackground(Color.WHITE);
+                    d33e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9972,6 +10106,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D34A.setBackground(Color.WHITE);
+                    d34a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -9998,6 +10133,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D34B.setBackground(Color.WHITE);
+                    d34b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -10024,6 +10160,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D34C.setBackground(Color.WHITE);
+                    d34c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -10050,6 +10187,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D34D.setBackground(Color.WHITE);
+                    d34d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -10076,6 +10214,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D34E.setBackground(Color.WHITE);
+                    d34e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -10102,6 +10241,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D35A.setBackground(Color.WHITE);
+                    d35a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -10128,6 +10268,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D35B.setBackground(Color.WHITE);
+                    d35b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -10154,6 +10295,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D35C.setBackground(Color.WHITE);
+                    d35c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -10180,6 +10322,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D35D.setBackground(Color.WHITE);
+                    d35d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -10206,6 +10349,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D35E.setBackground(Color.WHITE);
+                    d35e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -10232,6 +10376,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D36A.setBackground(Color.WHITE);
+                    d36a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -10258,6 +10403,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D36B.setBackground(Color.WHITE);
+                    d36b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -10284,6 +10430,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D36C.setBackground(Color.WHITE);
+                    d36c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -10310,6 +10457,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D36D.setBackground(Color.WHITE);
+                    d36d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -10336,6 +10484,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D36E.setBackground(Color.WHITE);
+                    d36e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -10362,6 +10511,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D37A.setBackground(Color.WHITE);
+                    d37a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -10388,6 +10538,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D37B.setBackground(Color.WHITE);
+                    d37b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -10414,6 +10565,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D37C.setBackground(Color.WHITE);
+                    d37c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -10440,6 +10592,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D37D.setBackground(Color.WHITE);
+                    d37d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -10466,6 +10619,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D37E.setBackground(Color.WHITE);
+                    d37e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -10492,6 +10646,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D38A.setBackground(Color.WHITE);
+                    d38a=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -10518,6 +10673,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D38B.setBackground(Color.WHITE);
+                    d38b=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -10544,6 +10700,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D38C.setBackground(Color.WHITE);
+                    d38c=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -10570,6 +10727,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D38D.setBackground(Color.WHITE);
+                    d38d=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -10596,6 +10754,7 @@ public class vOdontograma extends javax.swing.JFrame {
             }else{
                 if(numH==9){
                     D38E.setBackground(Color.WHITE);
+                    d38e=9;
                 }else{
                     if(numH<3&&numH>0){
                         showMessageDialog(this,"No se puede aplicar en esta opción");
@@ -10696,7 +10855,6 @@ public class vOdontograma extends javax.swing.JFrame {
             stmt.executeUpdate(cad);
             showMessageDialog(this,"¡Guardado exitoso!");
             stmt.close();
-            this.setVisible(false);
         }catch(SQLException ex){
             showMessageDialog(this,"Error al guardar\n"+ex.getMessage());
         }catch(ToothException e){
@@ -10713,7 +10871,7 @@ public class vOdontograma extends javax.swing.JFrame {
         Object [] opciones ={"Aceptar","Cancelar"};
         int eleccion = showOptionDialog(rootPane,"¿Seguro que quieres salir?\n¡Se perderan los datos que no hayas guardado!","Confirmar",YES_NO_OPTION,QUESTION_MESSAGE,null,opciones,"Aceptar");
         if (eleccion == YES_OPTION){
-            System.exit(0);
+            this.setVisible(false);
         }else{}
     }//GEN-LAST:event_formWindowClosing
 
@@ -11089,183 +11247,228 @@ public class vOdontograma extends javax.swing.JFrame {
                     switch(d18a){
                         case 3: {D18A.setBackground(Color.RED); break;}
                         case 4: {D18A.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d17a){
                         case 3: {D17A.setBackground(Color.RED); break;}
                         case 4: {D17A.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d16a){
                         case 3: {D16A.setBackground(Color.RED); break;}
                         case 4: {D16A.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d15a){
                         case 3: {D15A.setBackground(Color.RED); break;}
                         case 4: {D15A.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d14a){
                         case 3: {D14A.setBackground(Color.RED); break;}
                         case 4: {D14A.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d13a){
                         case 3: {D13A.setBackground(Color.RED); break;}
                         case 4: {D13A.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d12a){
                         case 3: {D12A.setBackground(Color.RED); break;}
                         case 4: {D12A.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d11a){
                         case 3: {D11A.setBackground(Color.RED); break;}
                         case 4: {D11A.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d18b){
                         case 3: {D18B.setBackground(Color.RED); break;}
                         case 4: {D18B.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d17b){
                         case 3: {D17B.setBackground(Color.RED); break;}
                         case 4: {D17B.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d16b){
                         case 3: {D16B.setBackground(Color.RED); break;}
                         case 4: {D16B.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d15b){
                         case 3: {D15B.setBackground(Color.RED); break;}
                         case 4: {D15B.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d14b){
                         case 3: {D14B.setBackground(Color.RED); break;}
                         case 4: {D14B.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d13b){
                         case 3: {D13B.setBackground(Color.RED); break;}
                         case 4: {D13B.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d12b){
                         case 3: {D12B.setBackground(Color.RED); break;}
                         case 4: {D12B.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d11b){
                         case 3: {D11B.setBackground(Color.RED); break;}
                         case 4: {D11B.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d18c){
                         case 3: {D18C.setBackground(Color.RED); break;}
                         case 4: {D18C.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d17c){
                         case 3: {D17C.setBackground(Color.RED); break;}
                         case 4: {D17C.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d16c){
                         case 3: {D16C.setBackground(Color.RED); break;}
                         case 4: {D16C.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d15c){
                         case 3: {D15C.setBackground(Color.RED); break;}
                         case 4: {D15C.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d14c){
                         case 3: {D14C.setBackground(Color.RED); break;}
                         case 4: {D14C.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d13c){
                         case 3: {D13C.setBackground(Color.RED); break;}
                         case 4: {D13C.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d12c){
                         case 3: {D12C.setBackground(Color.RED); break;}
                         case 4: {D12C.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d11c){
                         case 3: {D11C.setBackground(Color.RED); break;}
                         case 4: {D11C.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d18d){
                         case 3: {D18D.setBackground(Color.RED); break;}
                         case 4: {D18D.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d17d){
                         case 3: {D17D.setBackground(Color.RED); break;}
                         case 4: {D17D.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d16d){
                         case 3: {D16D.setBackground(Color.RED); break;}
                         case 4: {D16D.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d15d){
                         case 3: {D15D.setBackground(Color.RED); break;}
                         case 4: {D15D.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d14d){
                         case 3: {D14D.setBackground(Color.RED); break;}
                         case 4: {D14D.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d13d){
                         case 3: {D13D.setBackground(Color.RED); break;}
                         case 4: {D13D.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d12d){
                         case 3: {D12D.setBackground(Color.RED); break;}
                         case 4: {D12D.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d11d){
                         case 3: {D11D.setBackground(Color.RED); break;}
                         case 4: {D11D.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d18e){
                         case 3: {D18E.setBackground(Color.RED); break;}
                         case 4: {D18E.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d17e){
                         case 3: {D17E.setBackground(Color.RED); break;}
                         case 4: {D17E.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d16e){
                         case 3: {D16E.setBackground(Color.RED); break;}
                         case 4: {D16E.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d15e){
                         case 3: {D15E.setBackground(Color.RED); break;}
                         case 4: {D15E.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d14e){
                         case 3: {D14E.setBackground(Color.RED); break;}
                         case 4: {D14E.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d13e){
                         case 3: {D13E.setBackground(Color.RED); break;}
                         case 4: {D13E.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d12e){
                         case 3: {D12E.setBackground(Color.RED); break;}
                         case 4: {D12E.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d11e){
                         case 3: {D11E.setBackground(Color.RED); break;}
                         case 4: {D11E.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     //21-28 --------------------------------------------
                     switch(d21a){
                         case 3: {D21A.setBackground(Color.RED); break;}
                         case 4: {D21A.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d22a){
                         case 3: {D22A.setBackground(Color.RED); break;}
                         case 4: {D22A.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d23a){
                         case 3: {D23A.setBackground(Color.RED); break;}
                         case 4: {D23A.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d24a){
                         case 3: {D24A.setBackground(Color.RED); break;}
                         case 4: {D24A.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d25a){
                         case 3: {D25A.setBackground(Color.RED); break;}
                         case 4: {D25A.setBackground(Color.BLUE); break;}
+                        default: {break;}
                     }
                     switch(d26a){
                         case 3: {D26A.setBackground(Color.RED); break;}
