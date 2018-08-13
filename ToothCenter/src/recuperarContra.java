@@ -56,6 +56,7 @@ public class recuperarContra extends javax.swing.JDialog {
         txtUsuario = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -97,22 +98,30 @@ public class recuperarContra extends javax.swing.JDialog {
                 .addComponent(jLabel1))
         );
 
+        jButton1.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
+        jButton1.setText("Cancelar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(74, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(jButtonEnviar)
-                            .addGap(132, 132, 132))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(70, 70, 70)))))
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jButtonEnviar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGap(18, 18, 18)
+                            .addComponent(jButton1))
+                        .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(70, 70, 70))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,9 +131,11 @@ public class recuperarContra extends javax.swing.JDialog {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(51, 51, 51)
-                .addComponent(jButtonEnviar)
-                .addGap(50, 50, 50))
+                .addGap(46, 46, 46)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButtonEnviar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(55, 55, 55))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -177,39 +188,58 @@ public class recuperarContra extends javax.swing.JDialog {
     }
     
     String correo="",contraseña="";
-    private void getCorreo()
-     {
-         
-         try{
-            
+    
+    private void validateUser() throws ToothException{
+        String user="";
+        try {
+            Statement stmt=cn.createStatement();
+            stmt.execute("select*from Usuario where NUsuario like'"+txtUsuario.getText().toLowerCase()+"*'"); 
+            ResultSet rs=stmt.getResultSet();
+            user=user+rs.getString("NUsuario");
+        } catch (SQLException ex) {}
+        if(user==""){
+            throw new ToothException("Usuario no encontrado");
+        }
+    }
+    
+    private void getCorreo() throws ToothException{
+        try{
             Statement stmt=cn.createStatement();
             stmt.execute("select*from Usuario where NUsuario='"+txtUsuario.getText().toLowerCase()+"'");        
             ResultSet rs=stmt.getResultSet();
-            if(rs!=null)
-            {
-              while(rs.next()){
+            if(rs!=null){
+                while(rs.next()){
                     contraseña=rs.getString("Contraseña");
                     correo=rs.getString("Correo");
-                    
                 }
-            }else{showMessageDialog(this,"Error");}
+            }else{
+                showMessageDialog(this,"Error");
+            }
             stmt.close();
-        }catch(SQLException ex){showMessageDialog(this,"Usuario no encontrado."+ex.getMessage());}
+        }catch(SQLException ex){
+            //throw new ToothException("Usuario no encontrado");
+        }        
      }
     
     private void jButtonEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarActionPerformed
-        getCorreo();
-        if(correo.equals("")){
-            showMessageDialog(this,"Usuario no encontrado");
+        try{
+            validateUser();
+            getCorreo();
+            Mensage = "Tu contraseña es:"+contraseña;
+            To = correo;
+            Subject ="Recuperacion de contraseña";
+            SendMail();
+            Ventana v=new Ventana();
+            v.setVisible(true);
+            this.dispose();
+        }catch(ToothException e){
+            showMessageDialog(this, e.getMessage());
         }
-        Mensage = "Tu contraseña es:"+contraseña;
-        To = correo;
-        Subject ="Recuperacion de contraseña";
-        SendMail();
-        Ventana v=new Ventana();
-        v.setVisible(true);
-        this.dispose();
     }//GEN-LAST:event_jButtonEnviarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     public void conectar(){
        String dbURL="jdbc:ucanaccess://C:\\ToothCenter\\ToothCenterBD.accdb";
@@ -264,6 +294,7 @@ public class recuperarContra extends javax.swing.JDialog {
     }
     private java.sql.Connection cn;
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonEnviar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
