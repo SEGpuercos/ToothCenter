@@ -438,9 +438,9 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsuarioKeyReleased
 
     private void lblRegistrarseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRegistrarseMouseClicked
-         Registrarse Registro= new Registrarse();
-            Registro.setVisible(true);
-            this.dispose();
+        Registrarse Registro= new Registrarse();
+        Registro.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_lblRegistrarseMouseClicked
 
     private void lblCambiarCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblCambiarCMouseClicked

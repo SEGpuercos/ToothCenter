@@ -44,12 +44,13 @@ public class Registrarse extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         txtUsuario = new javax.swing.JTextField();
         txtCorreo = new javax.swing.JTextField();
-        Registrar = new javax.swing.JButton();
+        btnRegistrar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         txtContraseña = new javax.swing.JPasswordField();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        btnCancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,12 +68,12 @@ public class Registrarse extends javax.swing.JFrame {
 
         txtCorreo.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
 
-        Registrar.setBackground(new java.awt.Color(255, 255, 255));
-        Registrar.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        Registrar.setText("Registrar");
-        Registrar.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistrar.setBackground(new java.awt.Color(255, 255, 255));
+        btnRegistrar.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        btnRegistrar.setText("Registrar");
+        btnRegistrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RegistrarActionPerformed(evt);
+                btnRegistrarActionPerformed(evt);
             }
         });
 
@@ -104,14 +105,19 @@ public class Registrarse extends javax.swing.JFrame {
             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
 
+        btnCancel.setBackground(new java.awt.Color(255, 255, 255));
+        btnCancel.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        btnCancel.setText("Cancelar");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(207, 207, 207)
-                .addComponent(Registrar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(124, Short.MAX_VALUE)
@@ -123,6 +129,12 @@ public class Registrarse extends javax.swing.JFrame {
                     .addComponent(txtCorreo)
                     .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(90, 90, 90))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(162, 162, 162)
+                .addComponent(btnRegistrar)
+                .addGap(18, 18, 18)
+                .addComponent(btnCancel)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,9 +152,11 @@ public class Registrarse extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
-                .addComponent(Registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -167,79 +181,59 @@ public class Registrarse extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsuarioActionPerformed
  
      private void validarUsuario()throws ToothException{
-        
-         try{
-            
+        try{
             Statement stmt=cn.createStatement();
             stmt.execute("select*from Usuario");        
             ResultSet rs=stmt.getResultSet();
-            if(rs!=null)
-            {
-              while(rs.next()){
-                    
-                    if(txtUsuario.getText().equals(rs.getString("NUsuario")))
-                    {
+            if(rs!=null){
+                while(rs.next()){    
+                    if(txtUsuario.getText().equals(rs.getString("NUsuario"))){
                         throw new ToothException("Nombre de usuario ocupado.");
                     }
-                    
-                    
                 }
-            }else{showMessageDialog(this,"Error");}
+            }else{
+                showMessageDialog(this,"Error");
+            }
             stmt.close();
-        }catch(SQLException ex){showMessageDialog(this,"Usuario no encontrado."+ex.getMessage());}
+        }catch(SQLException ex){
+            showMessageDialog(this,"Error al registrar."+ex.getMessage());
+        }
         
     }
-    private void validarCampos()throws ToothException{
-        if(txtUsuario.getText().equals(""))
-        {
-           throw new ToothException("Introduce el usuario.");
-           
-        }else{if(txtContraseña.getText().equals("")){
-        
-        throw new ToothException("Introduce la contraseña.");
-        
-        }
+    private void validarCampos() throws ToothException{
+        String user = txtUsuario.getText();
+        String pass = txtContraseña.getText();
+        String mail = txtCorreo.getText();
+        if(user.equals("")&&pass.equals("")&&mail.equals("")){
+            throw new ToothException("Introduce los datos del usuario.");
+        }else{
+            if(user.equals("")){
+                throw new ToothException("Introduce el nombre de usuario.");
+            }else{
+                if(pass.equals("")){
+                    throw new ToothException("Introduce la contraseña.");
+                }else{
+                    if(mail.equals("")){
+                        throw new ToothException("Introduce el e-Mail.");
+                    }
                 }
-        
+            }
+        }
     }
  private void validarCorreo()throws ToothException{
-     String c=txtCorreo.getText();
-     if(c.equals(""))
-     {
-          throw new ToothException("Introduce un correo electronico.");
-     }
-     else
-     {
-         String a[]=c.split("@");
-         if(a.length<2)
-         {
-              throw new ToothException("Correo no valido.");
-         }
-         else
-         {
-             
-             
-             if(a[1].indexOf(".")==-1)
-             {
-                  throw new ToothException("Correo no valido.");
-             }
-         }
-     }
-     
-     
-     
-     
+    String c=txtCorreo.getText();
+    String a[]=c.split("@");
+    if(a.length<2){
+        throw new ToothException("¡Correo no valido!\nEjemplo: correo@dominio.com");
+    }else{
+        if(a[1].indexOf(".")==-1){
+            throw new ToothException("¡Correo no valido!\nEjemplo: correo@dominio.com");
+        }
+    }
  }
-    private void RegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarActionPerformed
-        try{
-            validarCampos();
-            validarCorreo();
-            validarUsuario();
-            }catch(ToothException e){
-               showMessageDialog(this,e.getMessage());
-                   return;
-                }
-        String cad="";
+ 
+ private void registrar(){
+     String cad="";
         try{
             Statement stmt=cn.createStatement();
             cad="insert into Usuario(NUsuario,Contraseña,Recordar,Correo) values ('"+txtUsuario.getText().toLowerCase()+"','"+txtContraseña.getText()+"','No','"+txtCorreo.getText()+"');";
@@ -249,13 +243,28 @@ public class Registrarse extends javax.swing.JFrame {
             showMessageDialog(this,"Registrado con exito!");
         }catch(SQLException ex){
             showMessageDialog(this,"Error al insertar");
+        }
+ }
+ 
+    private void btnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarActionPerformed
+        try{
+            validarCampos();
+            validarCorreo();
+            validarUsuario();
+            registrar();
+            Ventana inicio= new Ventana();
+            inicio.setVisible(true);
+            this.dispose();
         }catch(ToothException e){
             showMessageDialog(this, e.getMessage());
         }
-        Ventana inicio= new Ventana();
-            inicio.setVisible(true);
-            this.dispose();
-    }//GEN-LAST:event_RegistrarActionPerformed
+    }//GEN-LAST:event_btnRegistrarActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        Ventana obj = new Ventana();
+        obj.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnCancelActionPerformed
         public void conectar(){
        String dbURL="jdbc:ucanaccess://C:\\ToothCenter\\ToothCenterBD.accdb";
         try {
@@ -301,13 +310,13 @@ public class Registrarse extends javax.swing.JFrame {
     }
 private java.sql.Connection cn;
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Registrar;
+    private javax.swing.JButton btnCancel;
+    private javax.swing.JButton btnRegistrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPasswordField txtContraseña;
     private javax.swing.JTextField txtCorreo;
