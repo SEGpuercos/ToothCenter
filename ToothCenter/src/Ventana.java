@@ -225,7 +225,7 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
         jPanel1.add(lblRegistrarse);
-        lblRegistrarse.setBounds(30, 580, 70, 14);
+        lblRegistrarse.setBounds(150, 290, 70, 14);
 
         lblOlvideC.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         lblOlvideC.setText("Olvide mi contraseña");
@@ -242,7 +242,7 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
         jPanel1.add(lblOlvideC);
-        lblOlvideC.setBounds(110, 580, 118, 17);
+        lblOlvideC.setBounds(50, 580, 118, 17);
 
         lblCambiarC.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         lblCambiarC.setText("Cambiar contraseña");
@@ -259,7 +259,7 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
         jPanel1.add(lblCambiarC);
-        lblCambiarC.setBounds(240, 580, 113, 17);
+        lblCambiarC.setBounds(180, 580, 113, 17);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
