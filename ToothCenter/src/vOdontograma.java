@@ -20,7 +20,7 @@ import static javax.swing.JOptionPane.*;
  */
 /**
  *
- * @author Ana1
+ * @author SEG
  */
 public class vOdontograma extends javax.swing.JFrame {
 
@@ -10863,7 +10863,7 @@ public class vOdontograma extends javax.swing.JFrame {
 
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         cargarOdontograma();
-        lblNombre.setText(nombre);
+        lblNombre.setText(nomb);
     }//GEN-LAST:event_formWindowActivated
 
     private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
@@ -11976,7 +11976,7 @@ public class vOdontograma extends javax.swing.JFrame {
     }
     int numH = 0;
     int id;
-    String nombre;
+    String nomb;
     int d18,d17,d16,d15,d14,d13,d12,d11,d21,d22,d23,d24,d25,d26,d27,d28,d48,d47,d46,d45,d44,d43,d42,d41,d31,d32,d33,d34,d35,d36,d37,d38;
     int d18a,d18b,d18c,d18d,d18e,d17a,d17b,d17c,d17d,d17e,d16a,d16b,d16c,d16d,d16e,d15a,d15b,d15c,d15d,d15e,d14a,d14b,d14c,d14d,d14e,d13a,d13b,d13c,d13d,d13e,
         d12a,d12b,d12c,d12d,d12e,d11a,d11b,d11c,d11d,d11e,d21a,d21b,d21c,d21d,d21e,d22a,d22b,d22c,d22d,d22e,d23a,d23b,d23c,d23d,d23e,d24a,d24b,d24c,d24d,d24e,d25a,d25b,d25c,d25d,d25e,
