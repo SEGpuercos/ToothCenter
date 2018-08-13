@@ -198,7 +198,7 @@ public class Ventana extends javax.swing.JFrame {
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/2_1.png"))); // NOI18N
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(66, 137, 239, 141);
+        jLabel3.setBounds(70, 120, 239, 141);
 
         lblUP.setFont(new java.awt.Font("Calibri", 0, 12)); // NOI18N
         lblUP.setForeground(new java.awt.Color(255, 0, 0));
