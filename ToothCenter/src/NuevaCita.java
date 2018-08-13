@@ -1081,7 +1081,7 @@ private void cargarimageperfil()
         if(jmGuardar.isEnabled()==false){
             vOdontograma obj=new vOdontograma();
             obj.id=this.id;
-            obj.nombre=this.nombre;
+            obj.nomb=this.nombre;
             obj.setVisible(true);
         }
     }//GEN-LAST:event_jmOdontogramaMouseClicked
