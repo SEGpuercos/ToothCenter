@@ -19,9 +19,7 @@ import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.showMessageDialog;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+Avast no permite que el programa utilice este codigo.
  */
 
 /**
@@ -37,7 +35,7 @@ public class recuperarContra extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         conectar();
-         this.getContentPane().setBackground(Color.white);
+        this.getContentPane().setBackground(Color.white);
         this.setIconImage(new ImageIcon(getClass().getResource("/Image/Icono1.png")).getImage());
     }
 
@@ -168,11 +166,11 @@ public class recuperarContra extends javax.swing.JDialog {
         props.put("mail.smtp.host", "smtp.gmail.com");
         props.put("mail.smtp.port", "587");
         Session session = Session.getInstance(props,
-                new javax.mail.Authenticator(){
-                    protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication(Username, PassWord);
-                    }
-                });
+        new javax.mail.Authenticator(){
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(Username, PassWord);
+            }
+        });
         try {
             Message message = new MimeMessage(session);
             message.setFrom(new InternetAddress(Username));
@@ -183,7 +181,7 @@ public class recuperarContra extends javax.swing.JDialog {
             Transport.send(message);
             JOptionPane.showMessageDialog(this, "Recibiras un eMail con tu contraseña");
         } catch (MessagingException e) {
-            throw new RuntimeException(e);
+            throw new ToothException("Error\n"+e.getMessage());
         }
     }
     
@@ -193,11 +191,18 @@ public class recuperarContra extends javax.swing.JDialog {
         String user="";
         try {
             Statement stmt=cn.createStatement();
-            stmt.execute("select*from Usuario where NUsuario like'"+txtUsuario.getText().toLowerCase()+"*'"); 
+            stmt.execute("select*from Usuario where NUsuario='"+txtUsuario.getText().toLowerCase()+"'");   
             ResultSet rs=stmt.getResultSet();
-            user=user+rs.getString("NUsuario");
+            if(rs!=null)
+            {
+              while(rs.next()){
+                    
+                    user=rs.getString("NUsuario");
+                   
+                }
+            }else{showMessageDialog(this,"Error");}
         } catch (SQLException ex) {}
-        if(user==""){
+        if(user.equals("")){
             throw new ToothException("Usuario no encontrado");
         }
     }
@@ -228,9 +233,9 @@ public class recuperarContra extends javax.swing.JDialog {
             Mensage = "Tu contraseña es:"+contraseña;
             To = correo;
             Subject ="Recuperacion de contraseña";
-            SendMail();
-            Ventana v=new Ventana();
-            v.setVisible(true);
+           SendMail();
+            /*Ventana v=new Ventana();
+            v.setVisible(true);*/
             this.dispose();
         }catch(ToothException e){
             showMessageDialog(this, e.getMessage());
