@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.*;
 
 /*
@@ -292,24 +293,21 @@ public class Ventana extends javax.swing.JFrame {
         
     }
     private void validarcaducidad()throws ToothException{
-       Calendar fechasistema = new GregorianCalendar();
-        int añosistema = fechasistema.get(Calendar.YEAR);
-        int messistema = fechasistema.get(Calendar.MONTH);
-        messistema=messistema+1;
-        int diasistema = fechasistema.get(Calendar.DAY_OF_MONTH);
-        String FS=diasistema+"/"+messistema+"/"+añosistema;
-        
-        String fechacaducidad="";
-        
+        Calendar systemDate = new GregorianCalendar();
+        int systemYear = systemDate.get(Calendar.YEAR);
+        int systeMonth = systemDate.get(Calendar.MONTH);
+        systeMonth=systeMonth+1;
+        int systemDay = systemDate.get(Calendar.DAY_OF_MONTH);
+        String FS=systemDay+"/"+systeMonth+"/"+systemYear;
+
+        String expirationDate="";
         try{
             Statement stmt=cn.createStatement();
             stmt.execute("select*from Activador where Fecha=DateValue('"+FS+"');");
             ResultSet rs=stmt.getResultSet();
-            
             if(rs!=null){
                 while(rs.next()){    
-                     fechacaducidad=rs.getDate("Fecha").toString();
-                    showMessageDialog(this,fechacaducidad);
+                    expirationDate=rs.getDate("Fecha").toString();
                 }
             }else{
                 showMessageDialog(this,"Error");
@@ -318,30 +316,25 @@ public class Ventana extends javax.swing.JFrame {
         }catch(SQLException ex){
             showMessageDialog(this,ex.getMessage());
         }
-       if(fechacaducidad.equals("")){}else
-       {
-            throw new ToothException("Fecha Limite.");
+       if(expirationDate.equals("")){}else{
+            throw new ToothException("Licencia expirada.");
        }
-        
     }
-    String contraseña;
+    
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        if(txtUsuario.getText().equals("SEG")&&txtContraseña.getText().equals("xdlol123"))
-        {
+        if(txtUsuario.getText().equals("SEG")&&txtContraseña.getText().equals("xdlol123")){
             Admin Admin= new Admin();
             Admin.setVisible(true);
-           this.dispose();
-           return;
+            this.dispose();
+            return;
         }
-        
-         try{
+        try{
             validarUsuario();
             validarcaducidad();
-            }catch(ToothException e){
-                lblUP.setText(e.getMessage());
-                   return;
-                }
-        
+        }catch(ToothException ex){
+            showMessageDialog(null, ex.getMessage() ,"Activar el producto",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         contraseña="";
          try{
             
@@ -358,7 +351,7 @@ public class Ventana extends javax.swing.JFrame {
                 }
             }else{showMessageDialog(this,"Error");}
             stmt.close();
-        }catch(SQLException ex){showMessageDialog(this,"Usuario no encontrado."+ex.getMessage());}
+        }catch(SQLException ex){showMessageDialog(this,"Usuario no registrado."+ex.getMessage());}
         
          if(txtContraseña.getText().equals(contraseña))
          {
@@ -374,44 +367,28 @@ public class Ventana extends javax.swing.JFrame {
             txtUsuario.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
             txtContraseña.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
          }
-         
-        /*try{
-           
-            Paciente vPaciente= new Paciente();
-            vPaciente.setVisible(true);
-            this.dispose();
-        }catch(ToothException e){
-            lblUP.setText(e.getMessage());
-            txtUsuario.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
-            txtContraseña.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
-        }*/
     }//GEN-LAST:event_btnIngresarActionPerformed
-    private void recordar()
-    {
+    private void recordar(){
         try{
-                    String cad="";
-                    Statement stmt=cn.createStatement();
-                    cad="UPDATE Usuario set Recordar='Si' where NUsuario='"+txtUsuario.getText().toLowerCase()+"'";
-                    stmt.executeUpdate(cad);
-                    stmt.close();  
-                                       
-                }catch(SQLException ex){
-                    showMessageDialog(this,"Error al actualizar datos");
-                }
-            
+            String cad="";
+            Statement stmt=cn.createStatement();
+            cad="UPDATE Usuario set Recordar='Si' where NUsuario='"+txtUsuario.getText().toLowerCase()+"'";
+            stmt.executeUpdate(cad);
+            stmt.close();                             
+        }catch(SQLException ex){
+            showMessageDialog(this,"Error al actualizar datos");
+        }    
     }
-    private void norecordar()
-    {
+    private void norecordar(){
         try{
-                    String cad="";
-                    Statement stmt=cn.createStatement();
-                    cad="UPDATE Usuario set Recordar='No' where NUsuario='"+txtUsuario.getText().toLowerCase()+"'";
-                    stmt.executeUpdate(cad);
-                    stmt.close();  
-                                       
-                }catch(SQLException ex){
-                    showMessageDialog(this,"Error al actualizar datos");
-                }
+            String cad="";
+            Statement stmt=cn.createStatement();
+            cad="UPDATE Usuario set Recordar='No' where NUsuario='"+txtUsuario.getText().toLowerCase()+"'";
+            stmt.executeUpdate(cad);
+            stmt.close();                             
+        }catch(SQLException ex){
+            showMessageDialog(this,"Error al actualizar datos");
+        }
     }
     private void txtContraseñaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContraseñaActionPerformed
         // TODO add your handling code here:
@@ -446,7 +423,6 @@ public class Ventana extends javax.swing.JFrame {
     }//GEN-LAST:event_jpSalirMouseExited
 
     private void txtUsuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuarioKeyTyped
-
         lblUP.setText("");        
         txtUsuario.setBorder(BorderFactory.createLineBorder(Color.black, 1));
     }//GEN-LAST:event_txtUsuarioKeyTyped
@@ -458,18 +434,14 @@ public class Ventana extends javax.swing.JFrame {
 
     private void txtUsuarioKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuarioKeyReleased
         contraseña="";
-         try{
-            
+         try{    
             Statement stmt=cn.createStatement();
             stmt.execute("select*from Usuario where NUsuario='"+txtUsuario.getText().toLowerCase()+"'");        
             ResultSet rs=stmt.getResultSet();
-            if(rs!=null)
-            {
-              while(rs.next()){
-                    
+            if(rs!=null){
+                while(rs.next()){    
                     contraseña=rs.getString("Contraseña");
-                    if(rs.getString("Recordar").equals("Si"))
-                    {
+                    if(rs.getString("Recordar").equals("Si")){
                         txtContraseña.setText(contraseña);
                         jCheckBox1.setSelected(true);
                     }else{}
@@ -565,6 +537,7 @@ public void conectar(){
         });
     }
     private java.sql.Connection cn;
+    String contraseña;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngresar;
     private javax.swing.JCheckBox jCheckBox1;

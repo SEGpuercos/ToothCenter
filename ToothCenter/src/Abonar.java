@@ -1,4 +1,5 @@
 
+import java.awt.Color;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -6,6 +7,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import static javax.swing.JOptionPane.showMessageDialog;
 
@@ -50,6 +52,7 @@ public class Abonar extends javax.swing.JDialog {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         txtDesc = new javax.swing.JTextField();
+        lblMsgAbono = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmRegresar = new javax.swing.JMenu();
 
@@ -67,7 +70,12 @@ public class Abonar extends javax.swing.JDialog {
         jLabel2.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
         jLabel2.setText("Cantidad  $");
 
-        txtmonto.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
+        txtmonto.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        txtmonto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtmontoKeyTyped(evt);
+            }
+        });
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
@@ -84,25 +92,26 @@ public class Abonar extends javax.swing.JDialog {
         txtDesc.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
         txtDesc.setText("Abono");
 
+        lblMsgAbono.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(24, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1)
+                    .addComponent(txtDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(218, 218, 218)
-                        .addComponent(jButton1))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel1))
+                        .addComponent(txtmonto, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtDesc, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtmonto, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(21, 21, 21))
+                        .addComponent(lblMsgAbono, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(116, 116, 116))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -112,12 +121,16 @@ public class Abonar extends javax.swing.JDialog {
                     .addComponent(jLabel1)
                     .addComponent(txtDesc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txtmonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblMsgAbono, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2)))
+                    .addComponent(txtmonto, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(36, 36, 36)
                 .addComponent(jButton1)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jmRegresar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/back.png"))); // NOI18N
@@ -139,7 +152,7 @@ public class Abonar extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -148,11 +161,10 @@ public class Abonar extends javax.swing.JDialog {
 
     private void validarAbono()throws ToothException{
         String cad=txtmonto.getText();
-        String val="1234567890";
-        String abono=txtDesc.getText();
-        if(abono.equals("")){
+        String descrip=txtDesc.getText();
+        if(descrip.equals("")){
             txtDesc.requestFocus();
-            throw new ToothException("Agrega una descripción");
+            throw new ToothException("Agrega la descripción del abono");
         }
         if(cad.equals("")){
             txtmonto.requestFocus();
@@ -162,12 +174,6 @@ public class Abonar extends javax.swing.JDialog {
             txtmonto.requestFocus();
             throw new ToothException("¡Error!\nCantidad no valida.");
         }
-        for(int i=0;i<cad.length();i++){
-            if(val.indexOf(cad.substring(i,i+1))==-1){
-                txtmonto.requestFocus();
-                throw new ToothException("¡Error!\nCantidad no valida\nSolo numeros");
-            }
-        }
         showMessageDialog(this,"¡Abono exitoso!");
     }
     
@@ -175,7 +181,7 @@ public class Abonar extends javax.swing.JDialog {
         try{
             validarAbono();
             insertarabono();
-            this.dispose();
+            showMessageDialog(this,"Abono exitoso");
         }catch(ToothException e){
             showMessageDialog(this,e.getMessage());
         }
@@ -188,6 +194,17 @@ public class Abonar extends javax.swing.JDialog {
     private void jmRegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jmRegresarMouseClicked
         this.dispose();
     }//GEN-LAST:event_jmRegresarMouseClicked
+
+    private void txtmontoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtmontoKeyTyped
+        char e=evt.getKeyChar();
+        if((e<'0')||(e>'9')){
+            evt.consume();
+            lblMsgAbono.setText("!");
+        }else{
+            txtmonto.setBorder(BorderFactory.createLineBorder(Color.gray, 1));
+            lblMsgAbono.setText("");
+        }
+    }//GEN-LAST:event_txtmontoKeyTyped
 
     int id;
     public void insertarabono(){
@@ -220,6 +237,7 @@ public class Abonar extends javax.swing.JDialog {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenu jmRegresar;
+    private javax.swing.JLabel lblMsgAbono;
     private javax.swing.JTextField txtDesc;
     private javax.swing.JTextField txtmonto;
     // End of variables declaration//GEN-END:variables
