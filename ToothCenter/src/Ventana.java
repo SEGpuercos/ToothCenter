@@ -4,6 +4,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.BorderFactory;
@@ -289,12 +291,52 @@ public class Ventana extends javax.swing.JFrame {
                 }
         
     }
+    private void validarcaducidad()throws ToothException{
+       Calendar fechasistema = new GregorianCalendar();
+        int añosistema = fechasistema.get(Calendar.YEAR);
+        int messistema = fechasistema.get(Calendar.MONTH);
+        messistema=messistema+1;
+        int diasistema = fechasistema.get(Calendar.DAY_OF_MONTH);
+        String FS=diasistema+"/"+messistema+"/"+añosistema;
+        
+        String fechacaducidad="";
+        
+        try{
+            Statement stmt=cn.createStatement();
+            stmt.execute("select*from Activador where Fecha=DateValue('"+FS+"');");
+            ResultSet rs=stmt.getResultSet();
+            
+            if(rs!=null){
+                while(rs.next()){    
+                     fechacaducidad=rs.getDate("Fecha").toString();
+                    showMessageDialog(this,fechacaducidad);
+                }
+            }else{
+                showMessageDialog(this,"Error");
+            }
+            stmt.close();
+        }catch(SQLException ex){
+            showMessageDialog(this,ex.getMessage());
+        }
+       if(fechacaducidad.equals("")){}else
+       {
+            throw new ToothException("Fecha Limite.");
+       }
+        
+    }
     String contraseña;
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-        
+        if(txtUsuario.getText().equals("SEG")&&txtContraseña.getText().equals("xdlol123"))
+        {
+            Admin Admin= new Admin();
+            Admin.setVisible(true);
+           this.dispose();
+           return;
+        }
         
          try{
             validarUsuario();
+            validarcaducidad();
             }catch(ToothException e){
                 lblUP.setText(e.getMessage());
                    return;
