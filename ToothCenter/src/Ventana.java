@@ -425,6 +425,7 @@ public class Ventana extends javax.swing.JFrame {
     private void txtUsuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuarioKeyTyped
         lblUP.setText("");        
         txtUsuario.setBorder(BorderFactory.createLineBorder(Color.black, 1));
+        txtContraseña.setText("");
     }//GEN-LAST:event_txtUsuarioKeyTyped
 
     private void txtContraseñaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContraseñaKeyTyped
