@@ -1,16 +1,11 @@
 
+import clases.ToothException;
+import clases.direction;
 import java.awt.Color;
 import static java.awt.Frame.MAXIMIZED_BOTH;
-import java.awt.Image;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.Icon;
+import java.sql.*;
+import java.util.logging.*;
 import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 import static javax.swing.JOptionPane.*;
 
 /*
@@ -5021,7 +5016,9 @@ public class vOdontograma extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public void conectar(){
-       String dbURL="jdbc:ucanaccess://C:\\ToothCenter\\ToothCenterBD.accdb";
+        direction dir = new direction();
+        dir.readTxt("C:\\dir.ini");
+        String dbURL="jdbc:ucanaccess://"+dir.getDir();
         try {
             cn=DriverManager.getConnection(dbURL,"","");
             System.out.println("Conectado");

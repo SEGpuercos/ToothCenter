@@ -1,15 +1,11 @@
 
+import clases.ToothException;
+import clases.direction;
 import java.awt.Color;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
+import java.sql.*;
+import java.util.*;
+import java.util.logging.*;
+import javax.swing.*;
 import static javax.swing.JOptionPane.showMessageDialog;
 import javax.swing.table.DefaultTableModel;
 
@@ -1129,12 +1125,14 @@ public class addCita extends javax.swing.JDialog {
             }
     }
     public void conectar(){
-        String dbURL="jdbc:ucanaccess://C:\\ToothCenter\\ToothCenterBD.accdb";
-        try{
+        direction dir = new direction();
+        dir.readTxt("C:\\dir.ini");
+        String dbURL="jdbc:ucanaccess://"+dir.getDir();
+        try {
             cn=DriverManager.getConnection(dbURL,"","");
             System.out.println("Conectado");
-        }catch(SQLException ex) {
-            Logger.getLogger(addCita.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(nPaciente.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     

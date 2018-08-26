@@ -1,23 +1,14 @@
-
+import clases.ToothException;
+import clases.direction;
 import java.awt.Color;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.sql.*;
+import java.util.logging.*;
 import javax.swing.ImageIcon;
 import static javax.swing.JOptionPane.showMessageDialog;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  *
- * @author santo
+ * @author SEGsoft
  */
 public class Registrarse extends javax.swing.JFrame {
 
@@ -265,8 +256,11 @@ public class Registrarse extends javax.swing.JFrame {
         obj.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
-        public void conectar(){
-       String dbURL="jdbc:ucanaccess://C:\\ToothCenter\\ToothCenterBD.accdb";
+    
+    public void conectar(){
+        direction dir = new direction();
+        dir.readTxt("C:\\dir.ini");
+        String dbURL="jdbc:ucanaccess://"+dir.getDir();
         try {
             cn=DriverManager.getConnection(dbURL,"","");
             System.out.println("Conectado");

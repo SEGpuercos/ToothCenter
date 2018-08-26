@@ -1,4 +1,5 @@
 
+import clases.direction;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -138,7 +139,9 @@ private void borrar()
     }
     
     public void conectar(){
-       String dbURL="jdbc:ucanaccess://C:\\ToothCenter\\ToothCenterBD.accdb";
+        direction dir = new direction();
+        dir.readTxt("C:\\dir.ini");
+        String dbURL="jdbc:ucanaccess://"+dir.getDir();
         try {
             cn=DriverManager.getConnection(dbURL,"","");
             System.out.println("Conectado");

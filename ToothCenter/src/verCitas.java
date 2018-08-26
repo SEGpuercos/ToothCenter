@@ -1,23 +1,14 @@
-
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import clases.ToothException;
+import clases.direction;
+import java.sql.*;
+import java.util.logging.*;
 import javax.swing.ImageIcon;
 import static javax.swing.JOptionPane.showMessageDialog;
 import javax.swing.table.DefaultTableModel;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  *
- * @author gonzalo
+ * @author SEGsoft
  */
 public class verCitas extends javax.swing.JDialog {
 
@@ -34,12 +25,14 @@ public class verCitas extends javax.swing.JDialog {
     }
     
     public void conectar(){
-        String dbURL="jdbc:ucanaccess://C:\\ToothCenter\\ToothCenterBD.accdb";
-        try{
+        direction dir = new direction();
+        dir.readTxt("C:\\dir.ini");
+        String dbURL="jdbc:ucanaccess://"+dir.getDir();
+        try {
             cn=DriverManager.getConnection(dbURL,"","");
             System.out.println("Conectado");
         } catch (SQLException ex) {
-            Logger.getLogger(verCitas.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(nPaciente.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -223,12 +216,11 @@ public class verCitas extends javax.swing.JDialog {
                     int c=tblCita.getSelectedRow();
                     Statement stmt=cn.createStatement();
                     cad="delete * from Citas where Fecha=DateValue('"+fecha+"') and Hora='"+m.getValueAt(c, 2)+"'";
-                    showMessageDialog(this,cad);
                     stmt.executeUpdate(cad);
                     stmt.close();    
                     m.removeRow(tblCita.getSelectedRow());
                 }catch(SQLException ex){
-                    showMessageDialog(this,"Ese NC NO SE PUDO ELIMINAR");
+                    showMessageDialog(this,"NO SE PUDO ELIMINAR");
                 }
             }
         }

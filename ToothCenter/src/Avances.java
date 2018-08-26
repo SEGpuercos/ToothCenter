@@ -1,34 +1,20 @@
 
+import clases.ToothException;
+import clases.direction;
 import java.awt.*;
 import java.awt.Image;
 import java.io.File;
 import java.io.*;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JFileChooser;
-import static javax.swing.JOptionPane.QUESTION_MESSAGE;
-import static javax.swing.JOptionPane.YES_NO_OPTION;
-import static javax.swing.JOptionPane.YES_OPTION;
-import static javax.swing.JOptionPane.showMessageDialog;
-import static javax.swing.JOptionPane.showOptionDialog;
+import java.sql.*;
+import java.util.*;
+import java.util.logging.*;
+import javax.swing.*;
+import static javax.swing.JOptionPane.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  *
- * @author gonzalo
+ * @author SEGsoft
  */
 public class Avances extends javax.swing.JFrame {
 
@@ -334,7 +320,9 @@ public class Avances extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 public void conectar(){
-       String dbURL="jdbc:ucanaccess://C:\\ToothCenter\\ToothCenterBD.accdb";
+        direction dir = new direction();
+        dir.readTxt("C:\\dir.ini");
+        String dbURL="jdbc:ucanaccess://"+dir.getDir();
         try {
             cn=DriverManager.getConnection(dbURL,"","");
             System.out.println("Conectado");

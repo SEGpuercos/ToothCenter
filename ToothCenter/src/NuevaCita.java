@@ -1,32 +1,21 @@
 
-import java.awt.Color;
-import java.awt.Image;
+import clases.ToothException;
+import clases.direction;
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.io.File;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Calendar;
+import java.sql.*;
+import java.util.*;
 import java.util.GregorianCalendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JFileChooser;
+import java.util.logging.*;
+import javax.swing.*;
 import static javax.swing.JOptionPane.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  *
- * @author edson
+ * @author SEGsoft
  */
 public class NuevaCita extends javax.swing.JFrame {
 
@@ -42,10 +31,10 @@ public class NuevaCita extends javax.swing.JFrame {
         tabonos=(DefaultTableModel) tblabonos.getModel();
         bloquearcampos();
         Calendar fecha = new GregorianCalendar();
-        int ano = fecha.get(Calendar.YEAR);
-        int mes = fecha.get(Calendar.MONTH)+1;
-        int dia = fecha.get(Calendar.DAY_OF_MONTH);
-        fechaactual=dia+"/"+mes+"/"+ano;
+        int year = fecha.get(Calendar.YEAR);
+        int month = fecha.get(Calendar.MONTH)+1;
+        int day = fecha.get(Calendar.DAY_OF_MONTH);
+        fechaactual=day+"/"+month+"/"+year;
     }
 
     /**
@@ -611,7 +600,6 @@ public class NuevaCita extends javax.swing.JFrame {
 
     private void jmRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmRegresarActionPerformed
 
-// TODO add your handling code here:
     }//GEN-LAST:event_jmRegresarActionPerformed
 
     private void jmRegresarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jmRegresarMouseClicked
@@ -1141,19 +1129,18 @@ private void cargarimageperfil()
     }
      public void conectar()
     {
-        
-       String dbURL="jdbc:ucanaccess://C:\\ToothCenter\\ToothCenterBD.accdb";
-       
+       direction dir = new direction();
+        dir.readTxt("C:\\dir.ini");
+        String dbURL="jdbc:ucanaccess://"+dir.getDir();
         try {
             cn=DriverManager.getConnection(dbURL,"","");
             System.out.println("Conectado");
         } catch (SQLException ex) {
-            Logger.getLogger(Paciente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(nPaciente.class.getName()).log(Level.SEVERE, null, ex);
         }
         llenartcita();
         llenarcargos();
         llenarabonos();
- 
     }
     /**
      * @param args the command line arguments

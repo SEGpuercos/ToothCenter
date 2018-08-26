@@ -101,10 +101,10 @@
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Component id="txtDescripcion" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="txtCantidad" alignment="1" min="-2" pref="25" max="-2" attributes="0"/>
-                      <Component id="lblMonto" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="lblMsgTotal" alignment="0" min="-2" pref="25" max="-2" attributes="0"/>
+                      <Component id="lblMonto" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                   <Component id="btnCargar" min="-2" max="-2" attributes="0"/>

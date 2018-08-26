@@ -1,28 +1,20 @@
 
+import clases.ToothException;
+import clases.direction;
 import java.awt.Color;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
+import java.io.File;
+import java.sql.*;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 import static javax.swing.JOptionPane.*;
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  *
- * @author edson
+ * @author SEGsoft
  */
+
 public class Ventana extends javax.swing.JFrame {
 
     /**
@@ -491,8 +483,10 @@ public class Ventana extends javax.swing.JFrame {
     private void lblRegistrarseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRegistrarseMouseExited
         lblRegistrarse.setForeground(Color.black);
     }//GEN-LAST:event_lblRegistrarseMouseExited
-public void conectar(){
-       String dbURL="jdbc:ucanaccess://C:\\ToothCenter\\ToothCenterBD.accdb";
+    public void conectar(){        
+        direction dir = new direction();
+        dir.readTxt("C:\\dir.ini");
+        String dbURL="jdbc:ucanaccess://"+dir.getDir();
         try {
             cn=DriverManager.getConnection(dbURL,"","");
             System.out.println("Conectado");
@@ -500,9 +494,11 @@ public void conectar(){
             Logger.getLogger(nPaciente.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
     /**
      * @param args the command line arguments
      */
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -537,6 +533,7 @@ public void conectar(){
             }
         });
     }
+    
     private java.sql.Connection cn;
     String contraseña;
     // Variables declaration - do not modify//GEN-BEGIN:variables

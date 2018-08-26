@@ -1,21 +1,15 @@
 
+import clases.ToothException;
+import clases.direction;
 import java.awt.Color;
-import java.awt.event.KeyEvent;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
+import java.sql.*;
+import java.util.logging.*;
+import javax.swing.*;
 import static javax.swing.JOptionPane.*;
-
-
 
 /**
  *
- * @author gonzalo
+ * @author SEGsoft
  */
 public class nPaciente extends javax.swing.JDialog {
 
@@ -167,7 +161,9 @@ public class nPaciente extends javax.swing.JDialog {
     }
     
     public void conectar(){
-       String dbURL="jdbc:ucanaccess://C:\\ToothCenter\\ToothCenterBD.accdb";
+        direction dir = new direction();
+        dir.readTxt("C:\\dir.ini");
+        String dbURL="jdbc:ucanaccess://"+dir.getDir();
         try {
             cn=DriverManager.getConnection(dbURL,"","");
             System.out.println("Conectado");
@@ -589,7 +585,6 @@ public class nPaciente extends javax.swing.JDialog {
             validarTel();
             Statement stmt=cn.createStatement();
             cad="insert into Paciente (Nombre,Edad,Sexo,Telefono,Domicilio,Tutor,Diagnostico) values ('"+txtNombre.getText()+"',"+txtEdad.getText()+",'"+sexo+"',"+txtTelefono.getText()+",'"+txtDomicilio.getText()+"','"+txtTutor.getText()+"','"+txtConsulta.getText()+"');";
-            showMessageDialog(this,cad);
             stmt.executeUpdate(cad);
             stmt.close(); 
             guardarAnt();

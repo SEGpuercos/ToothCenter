@@ -1,21 +1,15 @@
 
+import clases.ToothException;
+import clases.direction;
 import java.awt.Color;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.sql.*;
+import java.util.logging.*;
 import javax.swing.ImageIcon;
-import static javax.swing.JOptionPane.QUESTION_MESSAGE;
-import static javax.swing.JOptionPane.YES_NO_OPTION;
-import static javax.swing.JOptionPane.YES_OPTION;
-import static javax.swing.JOptionPane.showMessageDialog;
-import static javax.swing.JOptionPane.showOptionDialog;
-
+import static javax.swing.JOptionPane.*;
 
 /**
  *
- * @author gonzalo
+ * @author SEGsoft
  */
 public class historialClinico2 extends javax.swing.JDialog {
     public historialClinico2(java.awt.Frame parent, boolean modal) {
@@ -26,12 +20,14 @@ public class historialClinico2 extends javax.swing.JDialog {
     }
 
     private void conectar(){
-        String dbURL="jdbc:ucanaccess://C:\\ToothCenter\\ToothCenterBD.accdb";
+        direction dir = new direction();
+        dir.readTxt("C:\\dir.ini");
+        String dbURL="jdbc:ucanaccess://"+dir.getDir();
         try {
             cn=DriverManager.getConnection(dbURL,"","");
             System.out.println("Conectado");
         } catch (SQLException ex) {
-            Logger.getLogger(Paciente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(nPaciente.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -864,7 +860,7 @@ public class historialClinico2 extends javax.swing.JDialog {
                             .addComponent(rbtnLimSi)
                             .addComponent(rbtnLimNo)))
                     .addComponent(lblLim))
-                .addContainerGap(57, Short.MAX_VALUE))
+                .addContainerGap(80, Short.MAX_VALUE))
         );
 
         jmGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/if_save_32_51415.png"))); // NOI18N
@@ -886,7 +882,9 @@ public class historialClinico2 extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();

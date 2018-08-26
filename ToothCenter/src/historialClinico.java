@@ -1,22 +1,15 @@
-
+import clases.ToothException;
+import clases.direction;
 import java.awt.Color;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.Calendar;
-import java.util.GregorianCalendar;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
+import java.sql.*;
+import java.util.*;
+import java.util.logging.*;
+import javax.swing.*;
 import static javax.swing.JOptionPane.*;
-import javax.swing.JTextField;
-import javax.swing.border.*;
 
 /**
  *
- * @author gonzalo
+ * @author SEGsoft
  */
 public class historialClinico extends javax.swing.JDialog {
 
@@ -65,12 +58,14 @@ public class historialClinico extends javax.swing.JDialog {
     }
     
     public void conectar(){
-        String dbURL="jdbc:ucanaccess://C:\\ToothCenter\\ToothCenterBD.accdb";
+        direction dir = new direction();
+        dir.readTxt("C:\\dir.ini");
+        String dbURL="jdbc:ucanaccess://"+dir.getDir();
         try {
             cn=DriverManager.getConnection(dbURL,"","");
             System.out.println("Conectado");
         } catch (SQLException ex) {
-            Logger.getLogger(Paciente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(nPaciente.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -420,7 +415,7 @@ public class historialClinico extends javax.swing.JDialog {
                         .addGap(10, 10, 10)
                         .addComponent(jLabel30))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addContainerGap())
         );
@@ -654,7 +649,7 @@ public class historialClinico extends javax.swing.JDialog {
             dialog.fecha=this.fecha;
             dialog.tutor=this.txtTutor.getText();
             dialog.setVisible(true);
-            this.setVisible(false);
+            this.dispose();
         }catch(ToothException e){
             showMessageDialog(this, e.getMessage());
         }

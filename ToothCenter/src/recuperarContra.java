@@ -1,30 +1,21 @@
-
+import clases.ToothException;
+import clases.direction;
 import java.awt.Color;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Properties;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.PasswordAuthentication;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
+import java.util.logging.*;
+import javax.mail.*;
+import javax.mail.internet.*;
+import javax.swing.*;
 import static javax.swing.JOptionPane.showMessageDialog;
 
 /*
-Avast no permite que el programa utilice este codigo.
+    Avast no permite que el programa utilice este codigo.
  */
 
 /**
  *
- * @author gonzalo
+ * @author SEGsoft
  */
 public class recuperarContra extends javax.swing.JDialog {
 
@@ -247,7 +238,9 @@ public class recuperarContra extends javax.swing.JDialog {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public void conectar(){
-       String dbURL="jdbc:ucanaccess://C:\\ToothCenter\\ToothCenterBD.accdb";
+        direction dir = new direction();
+        dir.readTxt("C:\\dir.ini");
+        String dbURL="jdbc:ucanaccess://"+dir.getDir();
         try {
             cn=DriverManager.getConnection(dbURL,"","");
             System.out.println("Conectado");

@@ -1,4 +1,6 @@
 
+import clases.ToothException;
+import clases.direction;
 import java.awt.Color;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -218,12 +220,14 @@ public class Abonar extends javax.swing.JDialog {
     }
     public void conectar()
     {
-        String dbURL="jdbc:ucanaccess://C:\\ToothCenter\\ToothCenterBD.accdb";
+        direction dir = new direction();
+        dir.readTxt("C:\\dir.ini");
+        String dbURL="jdbc:ucanaccess://"+dir.getDir();
         try {
             cn=DriverManager.getConnection(dbURL,"","");
             System.out.println("Conectado");
         } catch (SQLException ex) {
-            Logger.getLogger(Abonar.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(nPaciente.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
