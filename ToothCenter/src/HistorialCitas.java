@@ -1,4 +1,5 @@
 
+import clases.Conexion;
 import clases.direction;
 import java.sql.*;
 import java.util.logging.*;
@@ -17,6 +18,7 @@ public class HistorialCitas extends javax.swing.JFrame {
      */
     public HistorialCitas() {
         initComponents();
+        conectar();
         this.setIconImage(new ImageIcon(getClass().getResource("/Image/Icono1.png")).getImage());
         th=(DefaultTableModel) tblHistorial.getModel();
     }
@@ -126,8 +128,7 @@ int id;
 String nombre;
     private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
         txtnombre.setText(nombre);
-        conectar();
-        
+        llenartabla();
     }//GEN-LAST:event_formWindowActivated
 
     private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
@@ -135,15 +136,8 @@ String nombre;
     }//GEN-LAST:event_jMenu1MouseClicked
  public void conectar()
     {
-        direction dir = new direction();
-        dir.readTxt("C:\\dir.ini");
-        String dbURL="jdbc:ucanaccess://"+dir.getDir();
-        try {
-            cn=DriverManager.getConnection(dbURL,"","");
-            System.out.println("Conectado");
-        } catch (SQLException ex) {
-            Logger.getLogger(nPaciente.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        con =  new Conexion();
+        cn = con.getConection();
     }
  public void llenartabla()
  {
@@ -205,6 +199,7 @@ String nombre;
 
     private DefaultTableModel th;
     private java.sql.Connection cn;
+    Conexion con;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;

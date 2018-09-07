@@ -1,7 +1,9 @@
 
+import clases.Conexion;
 import clases.ToothException;
 import clases.direction;
 import java.awt.Color;
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -220,19 +222,13 @@ public class Abonar extends javax.swing.JDialog {
     }
     public void conectar()
     {
-        direction dir = new direction();
-        dir.readTxt("C:\\dir.ini");
-        String dbURL="jdbc:ucanaccess://"+dir.getDir();
-        try {
-            cn=DriverManager.getConnection(dbURL,"","");
-            System.out.println("Conectado");
-        } catch (SQLException ex) {
-            Logger.getLogger(nPaciente.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        con =  new Conexion();
+        cn = con.getConection();
     }
     
     String fechaactual;
-    private java.sql.Connection cn;
+    Conexion con;
+    private Connection cn;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

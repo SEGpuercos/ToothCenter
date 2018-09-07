@@ -1,7 +1,9 @@
-
+import clases.Conexion;
 import clases.ToothException;
 import clases.direction;
+import com.sun.awt.AWTUtilities;
 import java.awt.Color;
+import java.awt.event.KeyEvent;
 import java.io.File;
 import java.sql.*;
 import java.util.*;
@@ -76,6 +78,9 @@ public class Ventana extends javax.swing.JFrame {
         txtUsuario.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtUsuario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         txtUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtUsuarioKeyPressed(evt);
+            }
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtUsuarioKeyReleased(evt);
             }
@@ -111,6 +116,9 @@ public class Ventana extends javax.swing.JFrame {
             }
         });
         txtContraseña.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtContraseñaKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 txtContraseñaKeyTyped(evt);
             }
@@ -119,9 +127,18 @@ public class Ventana extends javax.swing.JFrame {
         txtContraseña.setBounds(65, 423, 250, 25);
 
         jPanel.setBackground(new java.awt.Color(0, 102, 204));
+        jPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
+        jPanel.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                jPanelMouseDragged(evt);
+            }
+        });
         jPanel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanelMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jPanelMousePressed(evt);
             }
         });
 
@@ -144,6 +161,7 @@ public class Ventana extends javax.swing.JFrame {
         lblSalir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Icons/430088-32.png"))); // NOI18N
         lblSalir.setAlignmentY(0.0F);
         lblSalir.setAutoscrolls(true);
+        lblSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         lblSalir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lblSalirMouseClicked(evt);
@@ -313,7 +331,7 @@ public class Ventana extends javax.swing.JFrame {
        }
     }
     
-    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+    private void ingresar(){
         if(txtUsuario.getText().equals("SEG")&&txtContraseña.getText().equals("xdlol123")){
             Admin Admin= new Admin();
             Admin.setVisible(true);
@@ -359,6 +377,10 @@ public class Ventana extends javax.swing.JFrame {
             txtUsuario.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
             txtContraseña.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
          }
+    }
+    
+    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+        ingresar();
     }//GEN-LAST:event_btnIngresarActionPerformed
     private void recordar(){
         try{
@@ -483,22 +505,32 @@ public class Ventana extends javax.swing.JFrame {
     private void lblRegistrarseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblRegistrarseMouseExited
         lblRegistrarse.setForeground(Color.black);
     }//GEN-LAST:event_lblRegistrarseMouseExited
-    public void conectar(){        
-        direction dir = new direction();
-        dir.readTxt("C:\\dir.ini");
-        String dbURL="jdbc:ucanaccess://"+dir.getDir();
-        try {
-            cn=DriverManager.getConnection(dbURL,"","");
-            System.out.println("Conectado");
-        } catch (SQLException ex) {
-            Logger.getLogger(nPaciente.class.getName()).log(Level.SEVERE, null, ex);
+
+    private void jPanelMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelMousePressed
+        x = evt.getX();
+        y = evt.getY();
+    }//GEN-LAST:event_jPanelMousePressed
+
+    private void jPanelMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelMouseDragged
+        this.setLocation(this.getLocation().x + evt.getX() - x, this.getLocation().y + evt.getY() - y);
+    }//GEN-LAST:event_jPanelMouseDragged
+
+    private void txtUsuarioKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuarioKeyPressed
+        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_ENTER){
+            ingresar();
         }
+    }//GEN-LAST:event_txtUsuarioKeyPressed
+
+    private void txtContraseñaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtContraseñaKeyReleased
+        if(evt.getKeyCode()==java.awt.event.KeyEvent.VK_ENTER){
+            ingresar();
+        }
+    }//GEN-LAST:event_txtContraseñaKeyReleased
+    public void conectar(){          
+        con =  new Conexion();
+        cn = con.getConection();
     }
-
-    /**
-     * @param args the command line arguments
-     */
-
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -507,7 +539,7 @@ public class Ventana extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -534,8 +566,11 @@ public class Ventana extends javax.swing.JFrame {
         });
     }
     
-    private java.sql.Connection cn;
+    
+    int x,y;
     String contraseña;
+    Conexion con;
+    private Connection cn;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngresar;
     private javax.swing.JCheckBox jCheckBox1;

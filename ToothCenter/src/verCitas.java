@@ -1,7 +1,6 @@
+import clases.Conexion;
 import clases.ToothException;
-import clases.direction;
 import java.sql.*;
-import java.util.logging.*;
 import javax.swing.ImageIcon;
 import static javax.swing.JOptionPane.showMessageDialog;
 import javax.swing.table.DefaultTableModel;
@@ -25,15 +24,8 @@ public class verCitas extends javax.swing.JDialog {
     }
     
     public void conectar(){
-        direction dir = new direction();
-        dir.readTxt("C:\\dir.ini");
-        String dbURL="jdbc:ucanaccess://"+dir.getDir();
-        try {
-            cn=DriverManager.getConnection(dbURL,"","");
-            System.out.println("Conectado");
-        } catch (SQLException ex) {
-            Logger.getLogger(nPaciente.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        con =  new Conexion();
+        cn = con.getConection();
     }
 
     /**
@@ -45,12 +37,17 @@ public class verCitas extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCita = new javax.swing.JTable();
-        lblFecha = new javax.swing.JLabel();
         jdFecha = new com.toedter.calendar.JDateChooser();
         btnVerCitas = new javax.swing.JButton();
+        rbtndia = new javax.swing.JRadioButton();
+        rbtnfecha = new javax.swing.JRadioButton();
+        jdcdesde = new com.toedter.calendar.JDateChooser();
+        jdchasta = new com.toedter.calendar.JDateChooser();
+        cmbtipo = new javax.swing.JComboBox();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmRegresar = new javax.swing.JMenu();
         jmBorrar = new javax.swing.JMenu();
@@ -68,11 +65,11 @@ public class verCitas extends javax.swing.JDialog {
 
             },
             new String [] {
-                "Paciente", "Fecha", "Hora"
+                "Paciente", "Fecha", "Hora", "Descripcion"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -86,9 +83,6 @@ public class verCitas extends javax.swing.JDialog {
         });
         jScrollPane1.setViewportView(tblCita);
 
-        lblFecha.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
-        lblFecha.setText("Fecha:");
-
         jdFecha.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jdFechaKeyPressed(evt);
@@ -97,12 +91,32 @@ public class verCitas extends javax.swing.JDialog {
 
         btnVerCitas.setBackground(new java.awt.Color(255, 255, 255));
         btnVerCitas.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        btnVerCitas.setText("Ver Citas");
+        btnVerCitas.setText("Ver Citas ");
         btnVerCitas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVerCitasActionPerformed(evt);
             }
         });
+
+        rbtndia.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(rbtndia);
+        rbtndia.setText("Dia");
+        rbtndia.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                rbtndiaPropertyChange(evt);
+            }
+        });
+
+        rbtnfecha.setBackground(new java.awt.Color(255, 255, 255));
+        buttonGroup1.add(rbtnfecha);
+        rbtnfecha.setText("Entre fechas");
+        rbtnfecha.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                rbtnfechaActionPerformed(evt);
+            }
+        });
+
+        cmbtipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pendientes", "Realizadas" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -111,27 +125,43 @@ public class verCitas extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 618, Short.MAX_VALUE)
-                        .addContainerGap())
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 618, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(lblFecha)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jdFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
-                        .addComponent(btnVerCitas, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(130, 130, 130))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(rbtnfecha)
+                            .addComponent(rbtndia))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jdFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(32, 32, 32)
+                                .addComponent(cmbtipo, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jdcdesde, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jdchasta, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(21, 21, 21)
+                        .addComponent(btnVerCitas, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jdFecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jdFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(rbtndia))
+                    .addComponent(cmbtipo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jdchasta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnVerCitas, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                    .addComponent(lblFecha))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(rbtnfecha)
+                        .addComponent(jdcdesde, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(53, 53, 53)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -190,9 +220,43 @@ public class verCitas extends javax.swing.JDialog {
     
     private void btnVerCitasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerCitasActionPerformed
         try{
-            validarBtn();
+           if(rbtndia.isSelected()==true&&cmbtipo.getSelectedIndex()==0)
+           {
+                validarBtn();
             fecha=jdFecha.getDate().getDate()+"/"+(jdFecha.getDate().getMonth()+1)+"/"+(jdFecha.getDate().getYear()+1900);
             llenartabla();
+           }
+           else
+           {
+            if(rbtnfecha.isSelected()==true&&cmbtipo.getSelectedIndex()==0)
+            {
+                //validar fechas
+                fechadesde=jdcdesde.getDate().getDate()+"/"+(jdcdesde.getDate().getMonth()+1)+"/"+(jdcdesde.getDate().getYear()+1900);
+                fechahasta=jdchasta.getDate().getDate()+"/"+(jdchasta.getDate().getMonth()+1)+"/"+(jdchasta.getDate().getYear()+1900);
+                llenartablames();
+                
+            }
+            else
+            {
+                if(rbtndia.isSelected()==true&&cmbtipo.getSelectedIndex()==1)
+           {
+                validarBtn();
+            fecha=jdFecha.getDate().getDate()+"/"+(jdFecha.getDate().getMonth()+1)+"/"+(jdFecha.getDate().getYear()+1900);
+            llenartablarealizadas();
+           }
+                else
+                {
+                    if(rbtnfecha.isSelected()==true&&cmbtipo.getSelectedIndex()==1)
+            {
+                //validar fechas
+                fechadesde=jdcdesde.getDate().getDate()+"/"+(jdcdesde.getDate().getMonth()+1)+"/"+(jdcdesde.getDate().getYear()+1900);
+                fechahasta=jdchasta.getDate().getDate()+"/"+(jdchasta.getDate().getMonth()+1)+"/"+(jdchasta.getDate().getYear()+1900);
+                llenartablamesrealizadas();
+                
+            }
+                }
+            }
+           } 
         }catch(ToothException e){
             showMessageDialog(rootPane, e.getMessage());
         }
@@ -205,6 +269,14 @@ public class verCitas extends javax.swing.JDialog {
     private void jmBorrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jmBorrarMouseClicked
         eliminar();
     }//GEN-LAST:event_jmBorrarMouseClicked
+
+    private void rbtnfechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbtnfechaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_rbtnfechaActionPerformed
+
+    private void rbtndiaPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_rbtndiaPropertyChange
+        
+    }//GEN-LAST:event_rbtndiaPropertyChange
 
     public void eliminar(){
         if(jmBorrar.isEnabled()){
@@ -232,12 +304,82 @@ public class verCitas extends javax.swing.JDialog {
             stmt.execute("select*from Citas where Fecha=DateValue('"+fecha+"');");
             ResultSet rs=stmt.getResultSet();
             m.setRowCount(0);
-            Object  O[]=new Object[3];
+            Object  O[]=new Object[4];
             if(rs!=null){
                 while(rs.next()){    
                     O[0]=rs.getString("paciente");        
                     O[1]=rs.getDate("fecha");
                     O[2]=rs.getString("hora");
+                    O[3]=rs.getString("Descripcion");
+                    m.addRow(O);
+                }
+            }else{
+                showMessageDialog(this,"Error");
+            }
+            stmt.close();
+        }catch(SQLException ex){
+            showMessageDialog(this,ex.getMessage());
+        }
+    }
+    public void llenartablarealizadas(){
+        try{
+            Statement stmt=cn.createStatement();
+            stmt.execute("select*from HistorialCitas where Fecha=DateValue('"+fecha+"');");
+            ResultSet rs=stmt.getResultSet();
+            m.setRowCount(0);
+            Object  O[]=new Object[4];
+            if(rs!=null){
+                while(rs.next()){    
+                    O[0]=rs.getString("paciente");        
+                    O[1]=rs.getDate("fecha");
+                    O[2]=rs.getString("hora");
+                    O[3]=rs.getString("tratamiento");
+                    m.addRow(O);
+                }
+            }else{
+                showMessageDialog(this,"Error");
+            }
+            stmt.close();
+        }catch(SQLException ex){
+            showMessageDialog(this,ex.getMessage());
+        }
+    }
+    public void llenartablames(){
+        try{
+            Statement stmt=cn.createStatement();
+            stmt.execute("select*from Citas where Fecha BETWEEN DateValue('"+fechadesde+"') AND DateValue('"+fechahasta+"');");
+            ResultSet rs=stmt.getResultSet();
+            m.setRowCount(0);
+            Object  O[]=new Object[4];
+            if(rs!=null){
+                while(rs.next()){    
+                    O[0]=rs.getString("paciente");        
+                    O[1]=rs.getDate("fecha");
+                    O[2]=rs.getString("hora");
+                    O[3]=rs.getString("Descripcion");
+                    m.addRow(O);
+                }
+            }else{
+                showMessageDialog(this,"Error");
+            }
+            stmt.close();
+        }catch(SQLException ex){
+            showMessageDialog(this,ex.getMessage());
+        }
+    }
+     public void llenartablamesrealizadas(){
+        try{
+            Statement stmt=cn.createStatement();
+            stmt.execute("select*from HistorialCitas where Fecha BETWEEN DateValue('"+fechadesde+"') AND DateValue('"+fechahasta+"') AND Estado='Asistio';");
+            ResultSet rs=stmt.getResultSet();
+            m.setRowCount(0);
+            Object  O[]=new Object[4];
+            if(rs!=null){
+                while(rs.next()){    
+                    O[0]=rs.getString("paciente");        
+                    O[1]=rs.getDate("fecha");
+                    O[2]=rs.getString("hora");
+                    O[3]=rs.getString("tratamiento");
                     m.addRow(O);
                 }
             }else{
@@ -250,19 +392,26 @@ public class verCitas extends javax.swing.JDialog {
     }
 
     String fecha;
+    String fechadesde,fechahasta;
     private DefaultTableModel m;
-    private java.sql.Connection cn;
+    private Connection cn;
+    Conexion con;
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVerCitas;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JComboBox cmbtipo;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private com.toedter.calendar.JDateChooser jdFecha;
+    private com.toedter.calendar.JDateChooser jdcdesde;
+    private com.toedter.calendar.JDateChooser jdchasta;
     private javax.swing.JMenu jmBorrar;
     private javax.swing.JMenu jmRegresar;
-    private javax.swing.JLabel lblFecha;
+    private javax.swing.JRadioButton rbtndia;
+    private javax.swing.JRadioButton rbtnfecha;
     private javax.swing.JTable tblCita;
     // End of variables declaration//GEN-END:variables
 }

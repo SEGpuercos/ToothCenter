@@ -1,4 +1,5 @@
 
+import clases.Conexion;
 import clases.ToothException;
 import clases.direction;
 import java.awt.Color;
@@ -5016,15 +5017,8 @@ public class vOdontograma extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     public void conectar(){
-        direction dir = new direction();
-        dir.readTxt("C:\\dir.ini");
-        String dbURL="jdbc:ucanaccess://"+dir.getDir();
-        try {
-            cn=DriverManager.getConnection(dbURL,"","");
-            System.out.println("Conectado");
-        } catch (SQLException ex) {
-            Logger.getLogger(nPaciente.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        con =  new Conexion();
+        cn = con.getConection();
     }
     
     private void D18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_D18ActionPerformed
@@ -11982,6 +11976,7 @@ public class vOdontograma extends javax.swing.JFrame {
         d32a,d32b,d32c,d32d,d32e,d33a,d33b,d33c,d33d,d33e,d34a,d34b,d34c,d34d,d34e,d35a,d35b,d35c,d35d,d35e,d36a,d36b,d36c,d36d,d36e,d37a,d37b,d37c,d37d,d37e,
         d38a,d38b,d38c,d38d,d38e;
     private java.sql.Connection cn;
+    Conexion con;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton D11;
     private javax.swing.JPanel D11A;

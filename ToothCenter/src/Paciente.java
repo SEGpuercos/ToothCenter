@@ -1,3 +1,4 @@
+import clases.Conexion;
 import clases.direction;
 import java.sql.*;
 import java.util.logging.*;
@@ -45,6 +46,7 @@ public class Paciente extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        btnVerCita1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu4 = new javax.swing.JMenu();
         jmMas = new javax.swing.JMenu();
@@ -165,6 +167,15 @@ public class Paciente extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        btnVerCita1.setBackground(new java.awt.Color(255, 255, 255));
+        btnVerCita1.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        btnVerCita1.setText("Ver Ingresos");
+        btnVerCita1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVerCita1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -181,8 +192,11 @@ public class Paciente extends javax.swing.JFrame {
                                 .addComponent(txtBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 301, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lblLetras, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(168, 168, 168)
-                        .addComponent(btnVerCita, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnVerCita, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnVerCita1, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29))
                     .addComponent(jScrollPane1))
                 .addContainerGap())
         );
@@ -194,7 +208,9 @@ public class Paciente extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(16, 16, 16)
-                        .addComponent(btnVerCita, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnVerCita, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnVerCita1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(lblBuscar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -344,6 +360,11 @@ public class Paciente extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtBuscarKeyTyped
 
+    private void btnVerCita1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVerCita1ActionPerformed
+        VerIngresos dialog = new VerIngresos(new javax.swing.JFrame(), true);
+        dialog.setVisible(true);
+    }//GEN-LAST:event_btnVerCita1ActionPerformed
+
     public void llenartabla(){
         try{
             Statement stmt=cn.createStatement();
@@ -368,15 +389,8 @@ public class Paciente extends javax.swing.JFrame {
         }
     }
      public void conectar(){
-        direction dir = new direction();
-        dir.readTxt("C:\\dir.ini");
-        String dbURL="jdbc:ucanaccess://"+dir.getDir();
-        try {
-            cn=DriverManager.getConnection(dbURL,"","");
-            System.out.println("Conectado");
-        } catch (SQLException ex) {
-            Logger.getLogger(nPaciente.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        con =  new Conexion();
+        cn = con.getConection();
     }
     /**
      * @param args the command line arguments
@@ -414,10 +428,12 @@ public class Paciente extends javax.swing.JFrame {
     }
     String Ruta;
     private java.sql.Connection cn;
+    Conexion con;
     private DefaultTableModel m;
     Paciente ventanaPaciente;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVerCita;
+    private javax.swing.JButton btnVerCita1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu2;

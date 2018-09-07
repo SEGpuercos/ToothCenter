@@ -1,4 +1,4 @@
-
+import clases.Conexion;
 import clases.ToothException;
 import clases.direction;
 import java.awt.*;
@@ -199,7 +199,7 @@ public class NuevaCita extends javax.swing.JFrame {
         lblTelefono2.setText("Comentarios");
 
         lblDebe.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        lblDebe.setText("Debe  $");
+        lblDebe.setText("Total a pagar  $");
 
         txtdebe.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         txtdebe.setEnabled(false);
@@ -210,7 +210,7 @@ public class NuevaCita extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
-        jLabel1.setText("Proxima cita");
+        jLabel1.setText("Citas pendientes");
 
         btnCargar.setBackground(new java.awt.Color(255, 255, 255));
         btnCargar.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
@@ -229,11 +229,11 @@ public class NuevaCita extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Fecha", "Hora"
+                "Fecha", "Hora", "Tratamiento"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -251,6 +251,7 @@ public class NuevaCita extends javax.swing.JFrame {
         if (tblcita.getColumnModel().getColumnCount() > 0) {
             tblcita.getColumnModel().getColumn(0).setResizable(false);
             tblcita.getColumnModel().getColumn(1).setResizable(false);
+            tblcita.getColumnModel().getColumn(2).setResizable(false);
         }
 
         btnAbonar.setBackground(new java.awt.Color(255, 255, 255));
@@ -409,19 +410,18 @@ public class NuevaCita extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGroup(lbltotalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(lbltotalcLayout.createSequentialGroup()
+                        .addGap(8, 8, 8)
                         .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(lbltotalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(lbltotalcLayout.createSequentialGroup()
-                                .addComponent(btnAsistio, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnNoA, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(btnCancelar))
+                            .addComponent(btnAgendar)
                             .addGroup(lbltotalcLayout.createSequentialGroup()
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 331, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(29, 29, 29)
-                                .addComponent(btnAgendar))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(lbltotalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(btnAsistio, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnNoA, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnCancelar)))))
                     .addGroup(lbltotalcLayout.createSequentialGroup()
                         .addGap(100, 100, 100)
                         .addGroup(lbltotalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -438,7 +438,7 @@ public class NuevaCita extends javax.swing.JFrame {
                                     .addComponent(txttotala, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(jLabel3)
                                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 389, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addGap(24, 24, 24))
+                .addGap(47, 47, 47))
         );
         lbltotalcLayout.setVerticalGroup(
             lbltotalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -475,21 +475,18 @@ public class NuevaCita extends javax.swing.JFrame {
                         .addGap(42, 128, Short.MAX_VALUE))
                     .addGroup(lbltotalcLayout.createSequentialGroup()
                         .addGroup(lbltotalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)
                             .addGroup(lbltotalcLayout.createSequentialGroup()
-                                .addGroup(lbltotalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnAgendar)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnAsistio)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(lbltotalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(btnAsistio)
-                                    .addGroup(lbltotalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(btnNoA)
-                                        .addComponent(btnCancelar)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
-                                .addComponent(jLabel3))
-                            .addGroup(lbltotalcLayout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(0, 0, Short.MAX_VALUE)))
+                                .addComponent(btnNoA)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnCancelar)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnAgendar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(lbltotalcLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(lbltotalcLayout.createSequentialGroup()
@@ -615,12 +612,13 @@ public class NuevaCita extends javax.swing.JFrame {
             stmt.execute("select*from Citas where Id_p="+id+" order by Fecha;");
             tc.setRowCount(0);
             ResultSet rs=stmt.getResultSet();
-            Object  O[]=new Object[2];
+            Object  O[]=new Object[3];
             if(rs!=null)
             {
                 while(rs.next()){
                    O[0]=rs.getDate("Fecha");
                   O[1]=rs.getString("Hora");
+                  O[2]=rs.getString("Descripcion");
                  tc.addRow(O); 
                   
                 
@@ -836,11 +834,11 @@ public class NuevaCita extends javax.swing.JFrame {
                 bloquearcampos();
                 desbloquear();
                 try{
-                    String cad="";
-                    Statement stmt=cn.createStatement();
-                    cad="UPDATE Paciente set Nombre='"+txtNombre.getText()+"',Edad="+txtEdad.getText()+",Telefono="+txtTelefono.getText()+",Diagnostico='"+txtDiag.getText()+"' where Id="+id+";";
-                    stmt.executeUpdate(cad);
-                    stmt.close();  
+                    String cad;
+                    try (Statement stmt = cn.createStatement()) {
+                        cad="UPDATE Paciente set Nombre='"+txtNombre.getText()+"',Edad="+txtEdad.getText()+",Telefono="+txtTelefono.getText()+",Diagnostico='"+txtDiag.getText()+"' where Id="+id+";";
+                        stmt.executeUpdate(cad);
+                    }  
                     diagnostico=txtDiag.getText();
                     cambiarBotones();                    
                 }catch(SQLException ex){
@@ -888,7 +886,7 @@ public class NuevaCita extends javax.swing.JFrame {
         {
            Statement stmt=cn.createStatement();
            int c=tblcita.getSelectedRow();
-           cad="insert into HistorialCitas (Id_paciente,Fecha_cita,Hora,Estado,Fecha) values ("+id+",DateValue('"+tblcita.getValueAt(c, 0)+"'),'"+tblcita.getValueAt(c, 1)+"','"+estado+"',DateValue('"+fechaactual+"'));";
+           cad="insert into HistorialCitas (Id_paciente,Fecha_cita,Hora,Estado,Fecha,paciente,tratamiento) values ("+id+",DateValue('"+tblcita.getValueAt(c, 0)+"'),'"+tblcita.getValueAt(c, 1)+"','"+estado+"',DateValue('"+fechaactual+"'),'"+txtNombre.getText()+"','"+tblcita.getValueAt(c, 2)+"');";
            //showMessageDialog(this,cad);
            stmt.executeUpdate(cad);
            stmt.close(); 
@@ -1129,18 +1127,8 @@ private void cargarimageperfil()
     }
      public void conectar()
     {
-       direction dir = new direction();
-        dir.readTxt("C:\\dir.ini");
-        String dbURL="jdbc:ucanaccess://"+dir.getDir();
-        try {
-            cn=DriverManager.getConnection(dbURL,"","");
-            System.out.println("Conectado");
-        } catch (SQLException ex) {
-            Logger.getLogger(nPaciente.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        llenartcita();
-        llenarcargos();
-        llenarabonos();
+        con =  new Conexion();
+        cn = con.getConection();
     }
     /**
      * @param args the command line arguments
@@ -1180,7 +1168,8 @@ private void cargarimageperfil()
     File fichero;
     private String fechaactual;
     private  float debe=0;
-    private java.sql.Connection cn;
+    private Connection cn;
+    Conexion con;
     private DefaultTableModel tc;
     private DefaultTableModel tcargos;
     private DefaultTableModel tabonos;

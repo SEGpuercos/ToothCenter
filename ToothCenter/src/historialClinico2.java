@@ -1,4 +1,5 @@
 
+import clases.Conexion;
 import clases.ToothException;
 import clases.direction;
 import java.awt.Color;
@@ -20,15 +21,8 @@ public class historialClinico2 extends javax.swing.JDialog {
     }
 
     private void conectar(){
-        direction dir = new direction();
-        dir.readTxt("C:\\dir.ini");
-        String dbURL="jdbc:ucanaccess://"+dir.getDir();
-        try {
-            cn=DriverManager.getConnection(dbURL,"","");
-            System.out.println("Conectado");
-        } catch (SQLException ex) {
-            Logger.getLogger(nPaciente.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        con =  new Conexion();
+        cn = con.getConection();
     }
     
     @SuppressWarnings("unchecked")
@@ -1389,6 +1383,7 @@ String pen,anest,yodo,aspi,presion,sangreE,pSang,vih,hep,emb,eVen,ulcera,pAntico
     }
     
     private java.sql.Connection cn;
+    Conexion con;
     int id_paciente;
     String fecha,tutor,otro;
     String fecha_nacimiento,odontologo_tratante,antecedentes_familiares,tension_arterial,cirugias,transfuciones_sangre,motivo_consulta;

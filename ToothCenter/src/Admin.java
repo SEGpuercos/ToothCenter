@@ -1,5 +1,7 @@
 
+import clases.Conexion;
 import clases.direction;
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -98,7 +100,18 @@ public class Admin extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
        insertarfecha();
     }//GEN-LAST:event_jButton1ActionPerformed
-private void borrar() 
+
+    private void encriptFecha(String date){
+        String f="123456789/";
+        String encrptDate;
+        for(int i=0;i<date.length();i++){
+            if((date.substring(i, i+1)).equals("1")){
+                
+            }
+        }
+    }
+    
+    private void borrar() 
      {String cad="";
         try{
                     
@@ -139,15 +152,8 @@ private void borrar()
     }
     
     public void conectar(){
-        direction dir = new direction();
-        dir.readTxt("C:\\dir.ini");
-        String dbURL="jdbc:ucanaccess://"+dir.getDir();
-        try {
-            cn=DriverManager.getConnection(dbURL,"","");
-            System.out.println("Conectado");
-        } catch (SQLException ex) {
-            Logger.getLogger(nPaciente.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        con =  new Conexion();
+        cn = con.getConection();
     }
     /**
      * @param args the command line arguments
@@ -183,7 +189,8 @@ private void borrar()
             }
         });
     }
-private java.sql.Connection cn;
+private Connection cn;
+Conexion con;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;

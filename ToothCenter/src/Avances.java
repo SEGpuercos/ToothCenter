@@ -1,4 +1,5 @@
 
+import clases.Conexion;
 import clases.ToothException;
 import clases.direction;
 import java.awt.*;
@@ -320,15 +321,8 @@ public class Avances extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 public void conectar(){
-        direction dir = new direction();
-        dir.readTxt("C:\\dir.ini");
-        String dbURL="jdbc:ucanaccess://"+dir.getDir();
-        try {
-            cn=DriverManager.getConnection(dbURL,"","");
-            System.out.println("Conectado");
-        } catch (SQLException ex) {
-            Logger.getLogger(nPaciente.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        con =  new Conexion();
+        cn = con.getConection();
     }
     private void btnImg2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnImg2ActionPerformed
         // TODO add your handling code here:
@@ -1176,7 +1170,8 @@ public void conectar(){
     String i1="",i2="",i3="",i4="",i5="",i6="",i7="",i8="",i9="",i10="",i11="",i12="",i13="",i14="",i15="";
     int id,variable;
     File f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,f13,f14,f15;
-private java.sql.Connection cn;
+    private Connection cn;
+    Conexion con;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnImg1;
     private javax.swing.JButton btnImg10;

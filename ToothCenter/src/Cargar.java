@@ -1,4 +1,5 @@
 
+import clases.Conexion;
 import clases.ToothException;
 import clases.direction;
 import java.awt.Color;
@@ -37,6 +38,7 @@ public class Cargar extends javax.swing.JDialog {
         fechaactual=dia+"/"+mes+"/"+ano;
         txtDescripcion.setEditable(false);
         txtCantidad.setEditable(false);
+        llenarcmb();
     }
 
     /**
@@ -278,15 +280,8 @@ public class Cargar extends javax.swing.JDialog {
     }
     public void conectar()
     {
-        direction dir = new direction();
-        dir.readTxt("C:\\dir.ini");
-        String dbURL="jdbc:ucanaccess://"+dir.getDir();
-        try {
-            cn=DriverManager.getConnection(dbURL,"","");
-            System.out.println("Conectado");
-        } catch (SQLException ex) {
-            Logger.getLogger(nPaciente.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        con =  new Conexion();
+        cn = con.getConection();
     }
     
     private void cmbCargoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cmbCargoMouseClicked
@@ -314,6 +309,7 @@ public class Cargar extends javax.swing.JDialog {
 
     String fechaactual;
     private java.sql.Connection cn;
+    Conexion con;
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCargar;

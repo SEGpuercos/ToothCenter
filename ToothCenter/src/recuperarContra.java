@@ -1,3 +1,4 @@
+import clases.Conexion;
 import clases.ToothException;
 import clases.direction;
 import java.awt.Color;
@@ -238,15 +239,8 @@ public class recuperarContra extends javax.swing.JDialog {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public void conectar(){
-        direction dir = new direction();
-        dir.readTxt("C:\\dir.ini");
-        String dbURL="jdbc:ucanaccess://"+dir.getDir();
-        try {
-            cn=DriverManager.getConnection(dbURL,"","");
-            System.out.println("Conectado");
-        } catch (SQLException ex) {
-            Logger.getLogger(nPaciente.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        con =  new Conexion();
+        cn = con.getConection();
     }
     
     /**
@@ -291,6 +285,7 @@ public class recuperarContra extends javax.swing.JDialog {
         });
     }
     private java.sql.Connection cn;
+    Conexion con;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonEnviar;

@@ -1,4 +1,5 @@
 
+import clases.Conexion;
 import clases.direction;
 import java.sql.*;
 import java.util.logging.*;
@@ -193,15 +194,8 @@ public class cambiarContra extends javax.swing.JDialog {
     }//GEN-LAST:event_btnccActionPerformed
 
     public void conectar(){
-        direction dir = new direction();
-        dir.readTxt("C:\\dir.ini");
-        String dbURL="jdbc:ucanaccess://"+dir.getDir();
-        try {
-            cn=DriverManager.getConnection(dbURL,"","");
-            System.out.println("Conectado");
-        } catch (SQLException ex) {
-            Logger.getLogger(nPaciente.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        con =  new Conexion();
+        cn = con.getConection();
     }
     
     /**
@@ -247,6 +241,7 @@ public class cambiarContra extends javax.swing.JDialog {
     }
 
     private java.sql.Connection cn;
+    Conexion con;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btncc;
     private javax.swing.JLabel jLabel1;

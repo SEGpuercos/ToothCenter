@@ -1,4 +1,5 @@
 
+import clases.Conexion;
 import clases.ToothException;
 import clases.direction;
 import java.awt.Color;
@@ -31,6 +32,7 @@ public class addCita extends javax.swing.JDialog {
         conectar();
         m=(DefaultTableModel) tblcitas.getModel();
         jdfecha.getDateEditor().setEnabled(false);
+        llenarcmb();
     }
 
     /**
@@ -71,9 +73,9 @@ public class addCita extends javax.swing.JDialog {
         btn163 = new javax.swing.JButton();
         txtpaciente = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
-        txtdes = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jdfecha = new com.toedter.calendar.JDateChooser();
+        cmbtratamiento = new javax.swing.JComboBox();
         jMenuBar1 = new javax.swing.JMenuBar();
         jmRegresar = new javax.swing.JMenu();
 
@@ -441,13 +443,6 @@ public class addCita extends javax.swing.JDialog {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Descripcion:");
 
-        txtdes.setEditable(false);
-        txtdes.setBackground(new java.awt.Color(255, 255, 255));
-        txtdes.setColumns(20);
-        txtdes.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        txtdes.setHorizontalAlignment(javax.swing.JTextField.LEFT);
-        txtdes.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
         jLabel1.setFont(new java.awt.Font("Calibri", 0, 16)); // NOI18N
         jLabel1.setText("Paciente:");
 
@@ -472,6 +467,7 @@ public class addCita extends javax.swing.JDialog {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(cmbtratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addComponent(jLabel2)
@@ -482,8 +478,7 @@ public class addCita extends javax.swing.JDialog {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(txtpaciente, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jdfecha, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addComponent(txtdes, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jdfecha, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -501,8 +496,8 @@ public class addCita extends javax.swing.JDialog {
                         .addGap(40, 40, 40)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtdes, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(44, 44, 44))
+                        .addComponent(cmbtratamiento, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(39, 39, 39))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                         .addComponent(jdfecha, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
@@ -537,6 +532,27 @@ public class addCita extends javax.swing.JDialog {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+   public void llenarcmb()
+    {
+        
+        try{
+            Statement stmt=cn.createStatement();
+            stmt.execute("select*from Tratamientos");
+            ResultSet rs=stmt.getResultSet();
+            String cad="Seleccione Tratamiento";
+            if(rs!=null)
+            {
+                while(rs.next()){
+                    cad=cad+","+rs.getString("Nombre");
+                    
+                }
+                Object op[]=cad.split(",");
+                javax.swing.DefaultComboBoxModel m=new javax.swing.DefaultComboBoxModel(op);
+                cmbtratamiento.setModel(m);
+            }else{showMessageDialog(this,"Error");}
+            stmt.close();
+        }catch(SQLException ex){showMessageDialog(this,ex.getMessage());}
+    }
     private void validarFecha(){
         if(jdfecha.getDate() == null){
             jdfecha.setBorder(BorderFactory.createLineBorder(Color.RED, 1));
@@ -578,7 +594,7 @@ public class addCita extends javax.swing.JDialog {
             fecha=jdfecha.getDate().getDate()+"/"+(jdfecha.getDate().getMonth()+1)+"/"+(jdfecha.getDate().getYear()+1900);
             habilitarbotones();
             llenartabla();
-            txtdes.setEditable(true);
+            
         }catch(ToothException e){
             showMessageDialog(this,e.getMessage());
         }
@@ -616,7 +632,7 @@ public class addCita extends javax.swing.JDialog {
         try
         {
            Statement stmt=cn.createStatement();
-           cad="insert into Citas (Id_p,Paciente,Descripcion,Fecha,Hora) values ("+id+",'"+txtpaciente.getText()+"',"+"'"+txtdes.getText()+"'"+",DateValue('"+fecha+"'),"+"'"+hrcita+"'"+");";
+           cad="insert into Citas (Id_p,Paciente,Descripcion,Fecha,Hora) values ("+id+",'"+txtpaciente.getText()+"',"+"'"+ cmbtratamiento.getSelectedItem()+"'"+",DateValue('"+fecha+"'),"+"'"+hrcita+"'"+");";
            stmt.executeUpdate(cad);
            stmt.close(); 
            llenartabla();
@@ -1125,15 +1141,8 @@ public class addCita extends javax.swing.JDialog {
             }
     }
     public void conectar(){
-        direction dir = new direction();
-        dir.readTxt("C:\\dir.ini");
-        String dbURL="jdbc:ucanaccess://"+dir.getDir();
-        try {
-            cn=DriverManager.getConnection(dbURL,"","");
-            System.out.println("Conectado");
-        } catch (SQLException ex) {
-            Logger.getLogger(nPaciente.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        con =  new Conexion();
+        cn = con.getConection();
     }
     
     private void txtpacienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpacienteActionPerformed
@@ -1156,7 +1165,8 @@ public class addCita extends javax.swing.JDialog {
     String hrcita, fecha, paciente;
     private DefaultTableModel m;
     private java.sql.Connection cn;
-
+    Conexion con;
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn10;
     private javax.swing.JButton btn103;
@@ -1181,6 +1191,7 @@ public class addCita extends javax.swing.JDialog {
     private javax.swing.JButton btn9;
     private javax.swing.JButton btn93;
     private javax.swing.JButton btnVerCitas;
+    private javax.swing.JComboBox cmbtratamiento;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenuBar jMenuBar1;
@@ -1190,7 +1201,6 @@ public class addCita extends javax.swing.JDialog {
     private com.toedter.calendar.JDateChooser jdfecha;
     private javax.swing.JMenu jmRegresar;
     private javax.swing.JTable tblcitas;
-    private javax.swing.JTextField txtdes;
     private javax.swing.JTextField txtpaciente;
     // End of variables declaration//GEN-END:variables
 }

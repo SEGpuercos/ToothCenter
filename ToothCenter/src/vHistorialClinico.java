@@ -1,3 +1,4 @@
+import clases.Conexion;
 import clases.direction;
 import java.sql.*;
 import java.util.logging.*;
@@ -968,18 +969,11 @@ int id;
             }else{showMessageDialog(this,"Error");}
             stmt.close();
         }catch(SQLException ex){showMessageDialog(this,ex.getMessage());}
-        
-        
-        
         try{
-        
             Statement stmt=cn.createStatement();
             stmt.execute("select*from Paciente where Id="+id);
             ResultSet rs=stmt.getResultSet();
-            
-            
-            if(rs!=null)
-            {
+            if(rs!=null){
                 while(rs.next()){    
                   txtNombre.setText(rs.getString("Nombre"));
                   txtEdad.setText(rs.getInt("Edad")+"");
@@ -989,19 +983,12 @@ int id;
                 }
             }else{showMessageDialog(this,"No hay");}
             stmt.close();
-            
         }catch(SQLException ex){showMessageDialog(this,ex.getMessage());}
     }
+    
      private void conectar(){
-        direction dir = new direction();
-        dir.readTxt("C:\\dir.ini");
-        String dbURL="jdbc:ucanaccess://"+dir.getDir();
-        try {
-            cn=DriverManager.getConnection(dbURL,"","");
-            System.out.println("Conectado");
-        } catch (SQLException ex) {
-            Logger.getLogger(nPaciente.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        con =  new Conexion();
+        cn = con.getConection();
     }
     /**
      * @param args the command line arguments
@@ -1037,7 +1024,8 @@ int id;
             }
         });
     }
-private java.sql.Connection cn;
+    private java.sql.Connection cn;
+    Conexion con;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
