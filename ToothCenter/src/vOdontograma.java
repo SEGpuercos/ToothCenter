@@ -312,7 +312,7 @@ public class vOdontograma extends javax.swing.JFrame {
 
         btnGuardar.setBackground(new java.awt.Color(0, 102, 204));
         btnGuardar.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
+        btnGuardar.setForeground(new java.awt.Color(0, 0, 204));
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -11970,11 +11970,11 @@ public class vOdontograma extends javax.swing.JFrame {
     String nomb;
     int d18,d17,d16,d15,d14,d13,d12,d11,d21,d22,d23,d24,d25,d26,d27,d28,d48,d47,d46,d45,d44,d43,d42,d41,d31,d32,d33,d34,d35,d36,d37,d38;
     int d18a,d18b,d18c,d18d,d18e,d17a,d17b,d17c,d17d,d17e,d16a,d16b,d16c,d16d,d16e,d15a,d15b,d15c,d15d,d15e,d14a,d14b,d14c,d14d,d14e,d13a,d13b,d13c,d13d,d13e,
-        d12a,d12b,d12c,d12d,d12e,d11a,d11b,d11c,d11d,d11e,d21a,d21b,d21c,d21d,d21e,d22a,d22b,d22c,d22d,d22e,d23a,d23b,d23c,d23d,d23e,d24a,d24b,d24c,d24d,d24e,d25a,d25b,d25c,d25d,d25e,
-        d26a,d26b,d26c,d26d,d26e,d27a,d27b,d27c,d27d,d27e,d28a,d28b,d28c,d28d,d28e,d48a,d48b,d48c,d48d,d48e,d47a,d47b,d47c,d47d,d47e,d46a,d46b,d46c,d46d,d46e,
-        d45a,d45b,d45c,d45d,d45e,d44a,d44b,d44c,d44d,d44e,d43a,d43b,d43c,d43d,d43e,d42a,d42b,d42c,d42d,d42e,d41a,d41b,d41c,d41d,d41e,d31a,d31b,d31c,d31d,d31e,
-        d32a,d32b,d32c,d32d,d32e,d33a,d33b,d33c,d33d,d33e,d34a,d34b,d34c,d34d,d34e,d35a,d35b,d35c,d35d,d35e,d36a,d36b,d36c,d36d,d36e,d37a,d37b,d37c,d37d,d37e,
-        d38a,d38b,d38c,d38d,d38e;
+        d12a,d12b,d12c,d12d,d12e,d11a,d11b,d11c,d11d,d11e,d21a,d21b,d21c,d21d,d21e,d22a,d22b,d22c,d22d,d22e,d23a,d23b,d23c,d23d,d23e,d24a,d24b,d24c,d24d,d24e,
+        d25a,d25b,d25c,d25d,d25e,d26a,d26b,d26c,d26d,d26e,d27a,d27b,d27c,d27d,d27e,d28a,d28b,d28c,d28d,d28e,d48a,d48b,d48c,d48d,d48e,d47a,d47b,d47c,d47d,d47e,
+        d46a,d46b,d46c,d46d,d46e,d45a,d45b,d45c,d45d,d45e,d44a,d44b,d44c,d44d,d44e,d43a,d43b,d43c,d43d,d43e,d42a,d42b,d42c,d42d,d42e,d41a,d41b,d41c,d41d,d41e,
+        d31a,d31b,d31c,d31d,d31e,d32a,d32b,d32c,d32d,d32e,d33a,d33b,d33c,d33d,d33e,d34a,d34b,d34c,d34d,d34e,d35a,d35b,d35c,d35d,d35e,d36a,d36b,d36c,d36d,d36e,
+        d37a,d37b,d37c,d37d,d37e,d38a,d38b,d38c,d38d,d38e;
     private java.sql.Connection cn;
     Conexion con;
     // Variables declaration - do not modify//GEN-BEGIN:variables
